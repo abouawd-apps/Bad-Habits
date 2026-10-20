@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>علم أعصاب العادات | كيف تتخلص من العادات السيئة؟ - Hard to Break</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Cairo for Arabic & Inter for English -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            arabic: ['Cairo', 'sans-serif'],
+            english: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            neuro: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#0f172a',
+              950: '#060b16'
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 3.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 5s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Typography adaptation by language */
+    html[lang="ar"] body {
+      font-family: 'Cairo', sans-serif;
+    }
+    html[lang="en"] body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Smooth transitions for theme changes */
+    body, nav, section, div, button, input, select, textarea {
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.1);
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #0b1120;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #6366f1;
+      border-radius: 9999px;
+    }
+
+    /* Neural Signal Animation */
+    @keyframes signalFlow {
+      0% { stroke-dashoffset: 100; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .neural-path-animated {
+      stroke-dasharray: 10 6;
+      animation: signalFlow 2.2s linear infinite;
+    }
+
+    /* Custom Range Slider */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 8px;
+      border-radius: 999px;
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #6366f1;
+      border: 3px solid #ffffff;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.5);
+      transition: transform 0.15s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .glass-card {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-[#070b14] dark:text-slate-100 min-h-screen selection:bg-indigo-500 selection:text-white overflow-x-hidden">
+
+  <!-- Ambient Background Glows -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute -top-32 -right-32 w-96 h-96 bg-indigo-500/15 dark:bg-indigo-600/15 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 -left-32 w-96 h-96 bg-cyan-500/10 dark:bg-cyan-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 right-1/4 w-80 h-80 bg-rose-500/10 dark:bg-purple-600/10 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- Sticky Top Navigation Bar -->
+  <header class="sticky top-0 z-50 glass-card bg-white/85 dark:bg-[#0b1120]/85 border-b border-slate-200/80 dark:border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
+      
+      <!-- Brand Logo & Title -->
+      <a href="#hero" class="flex items-center gap-3 group focus:outline-none">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-indigo-600 via-violet-600 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-brain text-lg sm:text-xl"></i>
+        </div>
+        <div>
+          <span id="navBrandTitle" class="block font-extrabold text-base sm:text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-cyan-500 dark:from-indigo-400 dark:to-cyan-300">
+            هندسة العادات العصبية
+          </span>
+          <span id="navBrandSubtitle" class="block text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium">
+            خلاصة كتاب Hard to Break - راسل بولدراك
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-semibold">
+        <a href="#chapters" id="navLinkChapters" class="px-3 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/70 hover:text-indigo-600 dark:hover:text-indigo-400 transition">خريطة الفيديو</a>
+        <a href="#loop-tool" id="navLinkLoop" class="px-3 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/70 hover:text-indigo-600 dark:hover:text-indigo-400 transition">محلل حلقة العادة</a>
+        <a href="#brain-battle" id="navLinkBattle" class="px-3 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/70 hover:text-indigo-600 dark:hover:text-indigo-400 transition">محاكي صراع الدماغ</a>
+        <a href="#workshop" id="navLinkWorkshop" class="px-3 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/70 hover:text-indigo-600 dark:hover:text-indigo-400 transition">ورشة بناء العادات</a>
+        <a href="#quiz" id="navLinkQuiz" class="px-3 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/70 hover:text-indigo-600 dark:hover:text-indigo-400 transition">اختبار الفهم</a>
+      </nav>
+
+      <!-- Action Controls: Language Switcher & Dark/Light Mode -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Language Switcher Button -->
+        <button id="langToggleBtn" onclick="toggleLanguage()" class="flex items-center gap-2 px-3.5 py-2 rounded-xl font-bold text-xs sm:text-sm bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800/70 hover:bg-indigo-100 dark:hover:bg-indigo-900/80 shadow-sm active:scale-95 transition" title="Switch Language / تبديل اللغة">
+          <i class="fa-solid fa-language text-base"></i>
+          <span id="langToggleText">English</span>
+        </button>
+
+        <!-- Theme Switcher Button -->
+        <button id="themeToggleBtn" onclick="toggleTheme()" class="w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 active:scale-95 transition" title="Toggle Dark/Light Mode">
+          <i id="themeIcon" class="fa-solid fa-sun text-base"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Quick Scroll Nav -->
+    <div class="lg:hidden flex items-center gap-2 overflow-x-auto px-4 py-2 border-t border-slate-200/60 dark:border-slate-800/60 text-xs font-bold whitespace-nowrap">
+      <a href="#chapters" id="mobNavChapters" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300">خريطة الفيديو</a>
+      <a href="#loop-tool" id="mobNavLoop" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300">محلل العادة</a>
+      <a href="#brain-battle" id="mobNavBattle" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300">صراع الدماغ</a>
+      <a href="#workshop" id="mobNavWorkshop" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300">ورشة العادات</a>
+      <a href="#quiz" id="mobNavQuiz" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300">الاختبار</a>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-20 space-y-16 sm:space-y-24">
+
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section id="hero" class="relative rounded-3xl overflow-hidden bg-white dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 shadow-xl p-6 sm:p-10 lg:p-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        
+        <!-- Hero Text Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/90 border border-indigo-200 dark:border-indigo-800/80 text-indigo-700 dark:text-indigo-300 text-xs sm:text-sm font-bold">
+            <span class="w-2 h-2 rounded-full bg-indigo-500 animate-ping"></span>
+            <span id="heroBadge">ملخص تفاعلي لكتاب راسل بولدراك • قناة Abouawd Studio</span>
+          </div>
+
+          <h1 id="heroTitle" class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">
+            كيف تتخلص من العادات السيئة؟ <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-violet-500 to-cyan-500 dark:from-indigo-400 dark:via-violet-400 dark:to-cyan-300">علم الأعصاب وراء التغيير</span>
+          </h1>
+
+          <!-- The 2 AM Scenario Callout Box -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-amber-50/90 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 flex items-start gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+              <i class="fa-solid fa-mobile-screen-button text-lg"></i>
+            </div>
+            <div class="space-y-1 text-sm sm:text-base">
+              <p id="hero2AmTitle" class="font-extrabold text-amber-900 dark:text-amber-300">
+                فخ الساعة 2:00 صباحاً الشهير:
+              </p>
+              <p id="hero2AmDesc" class="text-amber-800/90 dark:text-amber-200/80 leading-relaxed">
+                "سأفتح الهاتف لمدة 5 دقائق فقط قبل النوم..." وفجأة ترفع رأسك لتجد الساعة 4:00 فجراً! المشكلة ليست أنك "ضعيف الإرادة"، بل لأن دماغك مصمم بيولوجياً للحفاظ على العادات كاختصارات لتوفير الطاقة.
+              </p>
+            </div>
+          </div>
+
+          <p id="heroSubtext" class="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
+            استكشف من خلال هذا التطبيق التفاعلي كيف تتشكل العادات داخل <strong>العقد القاعدية</strong>، ولماذا يعتبر <strong>الدوبامين</strong> هرمون التوقع وليس السعادة، وكيف تستخدم <strong>هندسة السلوك</strong> لهزيمة العادات السيئة دون الاعتماد على قوة الإرادة المحدودة.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
+            <a href="#loop-tool" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl font-bold text-white bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 shadow-lg shadow-indigo-500/25 active:scale-95 transition">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span id="heroBtnStart">ابدأ هندسة عاداتك الآن</span>
+            </a>
+
+            <a href="https://youtu.be/HFfz_W0HCm4?si=2faFR6dL3adB75W9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-2xl font-bold bg-rose-50 dark:bg-rose-950/50 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800/70 hover:bg-rose-100 dark:hover:bg-rose-900/60 active:scale-95 transition">
+              <i class="fa-brands fa-youtube text-rose-600 dark:text-rose-400 text-xl"></i>
+              <span id="heroBtnVideo">مشاهدة الفيديو الأصلي</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual & Key Book Metrics Card -->
+        <div class="lg:col-span-5">
+          <div class="rounded-3xl bg-slate-900 dark:bg-[#0c1427] text-white p-6 sm:p-7 border border-slate-800 shadow-2xl space-y-6 relative overflow-hidden">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center text-indigo-400">
+                  <i class="fa-solid fa-book-medical text-xl"></i>
+                </div>
+                <div>
+                  <h2 id="bookCardTitle" class="font-extrabold text-base sm:text-lg text-white">Hard to Break</h2>
+                  <p id="bookCardAuthor" class="text-xs text-slate-400">د. راسل بولدراك (Russell Poldrack) - جامعة ستانفورد</p>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/30">
+                Neuroscience
+              </span>
+            </div>
+
+            <!-- Interactive 2 AM -> 4 AM Clock Visual -->
+            <div class="p-4 rounded-2xl bg-slate-800/70 border border-slate-700/70 flex items-center justify-between gap-4">
+              <div class="text-center flex-1">
+                <span id="clockLabel1" class="text-[11px] text-slate-400 block mb-1">قرار النظام الواعي</span>
+                <div class="font-mono text-xl sm:text-2xl font-black text-emerald-400">02:00 AM</div>
+                <span id="clockSub1" class="text-[11px] text-slate-300">"5 دقائق فقط"</span>
+              </div>
+              <div class="flex flex-col items-center text-amber-400">
+                <i class="fa-solid fa-bolt text-lg animate-bounce"></i>
+                <span id="clockLoopLabel" class="text-[10px] font-bold uppercase tracking-wider text-amber-300">حلقة الدوبامين</span>
+              </div>
+              <div class="text-center flex-1">
+                <span id="clockLabel2" class="text-[11px] text-slate-400 block mb-1">سيطرة النظام التلقائي</span>
+                <div class="font-mono text-xl sm:text-2xl font-black text-rose-400">04:00 AM</div>
+                <span id="clockSub2" class="text-[11px] text-slate-300">"ندم وإرهاق"</span>
+              </div>
+            </div>
+
+            <!-- 4 Core Scientific Numbers -->
+            <div class="grid grid-cols-2 gap-3.5">
+              <div class="p-3.5 rounded-2xl bg-slate-800/50 border border-slate-700/60">
+                <div class="text-2xl sm:text-3xl font-black text-cyan-400">20%</div>
+                <p id="stat1Desc" class="text-xs text-slate-300 mt-1 font-medium">من طاقة الجسم يستهلكها الدماغ، لذا يصنع العادات لتوفير الطاقة.</p>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-slate-800/50 border border-slate-700/60">
+                <div class="text-2xl sm:text-3xl font-black text-violet-400">3</div>
+                <p id="stat2Desc" class="text-xs text-slate-300 mt-1 font-medium">أركان لحلقة العادة: الإشارة (Cue)، السلوك، والمكافأة.</p>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-slate-800/50 border border-slate-700/60">
+                <div class="text-2xl sm:text-3xl font-black text-amber-400">2</div>
+                <p id="stat3Desc" class="text-xs text-slate-300 mt-1 font-medium">نظامان في صراع دائم: القشرة الجبهية الواعية ضد العقد القاعدية التلقائية.</p>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-slate-800/50 border border-slate-700/60">
+                <div class="text-2xl sm:text-3xl font-black text-emerald-400">4</div>
+                <p id="stat4Desc" class="text-xs text-slate-300 mt-1 font-medium">استراتيجيات عملية لهندسة البيئة وبناء مسارات عصبية جديدة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 2. INTERACTIVE VIDEO TIMELINE & CHAPTERS ==================== -->
+    <section id="chapters" class="space-y-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span id="sec1Badge" class="inline-block text-xs font-extrabold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/80 px-3 py-1 rounded-full mb-2">
+            الفصول الزمنية التفاعلية • 9 محطات علمية
+          </span>
+          <h2 id="sec1Title" class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
+            خريطة الفيديو العلمية (خطوة بخطوة مع التوقيت)
+          </h2>
+        </div>
+        <p id="sec1Subtitle" class="text-sm text-slate-600 dark:text-slate-400 max-w-xl">
+          اضغط على أي فصل زمني لاستعراض الشرح العصبي التفصيلي والقاعدة العملية المستخلصة منه، أو الانتقال مباشرة إلى نفس اللحظة في الفيديو.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <!-- Timeline List (Left/Right 5 cols) -->
+        <div id="timelineButtonsContainer" class="lg:col-span-5 space-y-2.5 max-h-[540px] overflow-y-auto pr-1 pl-1">
+          <!-- Dynamically populated by JS -->
+        </div>
+
+        <!-- Selected Chapter Spotlight Card (7 cols) -->
+        <div class="lg:col-span-7 bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-lg sticky top-24">
+          <div id="chapterDetailContainer">
+            <!-- Dynamically populated by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. INTERACTIVE TOOL 1: HABIT LOOP DECONSTRUCTOR & RE-ENGINEER ==================== -->
+    <section id="loop-tool" class="space-y-8 bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+        <div>
+          <span id="sec2Badge" class="inline-block text-xs font-extrabold uppercase tracking-wider text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-950/80 px-3 py-1 rounded-full mb-2">
+            الأداة التفاعلية الأولى • [00:02:16 & 00:06:55]
+          </span>
+          <h2 id="sec2Title" class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
+            محلل ومهندس حلقة العادة (Habit Loop Deconstructor)
+          </h2>
+          <p id="sec2Subtitle" class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-1">
+            كل عادة تتكون من (إشارة ← توقع الدوبامين ← سلوك ← مكافأة). اختر عادة جاهزة أو أدخل عادتك الخاصة لتفكيكها وإعادة هندستها بالاستراتيجيات الأربع.
+          </p>
+        </div>
+
+        <!-- Preset Selector Pills -->
+        <div id="presetHabitsBar" class="flex flex-wrap gap-2">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Custom Habit Input Row (Toggleable when 'custom' is chosen or always accessible) -->
+      <div id="customHabitForm" class="hidden p-5 rounded-2xl bg-indigo-50/70 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800/70 space-y-4">
+        <h3 id="customFormHeader" class="font-bold text-indigo-900 dark:text-indigo-200 text-sm sm:text-base flex items-center gap-2">
+          <i class="fa-solid fa-pen-ruler"></i>
+          <span>أدخل تفاصيل العادة التي تريد تحليلها وهندستها:</span>
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <label id="lblCustomCue" class="block text-xs font-bold mb-1 text-slate-700 dark:text-slate-300">1. الإشارة المحفزة (Cue)</label>
+            <input id="inpCustomCue" type="text" oninput="updateCustomHabitLoop()" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-sm focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="مثال: الشعور بالملل أو رؤية الهاتف" />
+          </div>
+          <div>
+            <label id="lblCustomBehavior" class="block text-xs font-bold mb-1 text-slate-700 dark:text-slate-300">2. السلوك التلقائي (Behavior)</label>
+            <input id="inpCustomBehavior" type="text" oninput="updateCustomHabitLoop()" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-sm focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="مثال: تصفح الريلز لساعات" />
+          </div>
+          <div>
+            <label id="lblCustomGood" class="block text-xs font-bold mb-1 text-slate-700 dark:text-slate-300">3. العادة البديلة المرغوبة</label>
+            <input id="inpCustomGood" type="text" oninput="updateCustomHabitLoop()" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-sm focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="مثال: قراءة 5 صفحات من كتاب" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual 4-Stage Loop Diagram (Cue -> Dopamine Craving -> Behavior -> Reward) -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+        <!-- Step 1: Cue -->
+        <div class="p-5 rounded-2xl bg-amber-50/80 dark:bg-amber-950/25 border-2 border-amber-300 dark:border-amber-700/70 relative group">
+          <div class="flex items-center justify-between mb-3">
+            <span id="loopStep1Tag" class="px-2.5 py-1 rounded-lg bg-amber-500 text-white text-xs font-extrabold">1. الإشارة (Cue)</span>
+            <i class="fa-solid fa-bell text-amber-500 text-xl"></i>
+          </div>
+          <h4 id="loopCueTitle" class="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white mb-1"></h4>
+          <p id="loopCueDesc" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+        </div>
+
+        <!-- Step 2: Dopamine Surge (Crucial point from 03:47 in video!) -->
+        <div class="p-5 rounded-2xl bg-rose-50/80 dark:bg-rose-950/25 border-2 border-rose-300 dark:border-rose-700/70 relative">
+          <div class="flex items-center justify-between mb-3">
+            <span id="loopStep2Tag" class="px-2.5 py-1 rounded-lg bg-rose-600 text-white text-xs font-extrabold">2. فخ الدوبامين (03:47)</span>
+            <i class="fa-solid fa-bolt-lightning text-rose-500 text-xl animate-pulse"></i>
+          </div>
+          <h4 id="loopDopamineTitle" class="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white mb-1"></h4>
+          <p id="loopDopamineDesc" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+        </div>
+
+        <!-- Step 3: Automatic Behavior -->
+        <div class="p-5 rounded-2xl bg-violet-50/80 dark:bg-violet-950/25 border-2 border-violet-300 dark:border-violet-700/70 relative">
+          <div class="flex items-center justify-between mb-3">
+            <span id="loopStep3Tag" class="px-2.5 py-1 rounded-lg bg-violet-600 text-white text-xs font-extrabold">3. السلوك التلقائي</span>
+            <i class="fa-solid fa-gears text-violet-500 text-xl"></i>
+          </div>
+          <h4 id="loopBehaviorTitle" class="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white mb-1"></h4>
+          <p id="loopBehaviorDesc" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+        </div>
+
+        <!-- Step 4: Immediate Reward -->
+        <div class="p-5 rounded-2xl bg-cyan-50/80 dark:bg-cyan-950/25 border-2 border-cyan-300 dark:border-cyan-700/70 relative">
+          <div class="flex items-center justify-between mb-3">
+            <span id="loopStep4Tag" class="px-2.5 py-1 rounded-lg bg-cyan-600 text-white text-xs font-extrabold">4. المكافأة المؤقتة</span>
+            <i class="fa-solid fa-gift text-cyan-500 text-xl"></i>
+          </div>
+          <h4 id="loopRewardTitle" class="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white mb-1"></h4>
+          <p id="loopRewardDesc" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+        </div>
+      </div>
+
+      <!-- The 4 Strategies Re-Engineering Blueprint -->
+      <div class="pt-4">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </div>
+          <h3 id="reEngHeader" class="text-lg sm:text-xl font-black text-slate-900 dark:text-white">
+            خطة هندسة السلوك الرباعية لكسر هذه الحلقة (من الدقيقة 06:55):
+          </h3>
+        </div>
+
+        <div id="fourStrategiesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Dynamically populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. INTERACTIVE TOOL 2: BRAIN SYSTEMS BATTLE SIMULATOR ==================== -->
+    <section id="brain-battle" class="space-y-8 bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+        <div>
+          <span id="sec3Badge" class="inline-block text-xs font-extrabold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-950/80 px-3 py-1 rounded-full mb-2">
+            الأداة التفاعلية الثانية • [00:03:11 - 00:06:02]
+          </span>
+          <h2 id="sec3Title" class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
+            محاكي صراع النظامين: القشرة الجبهية الواعية ضد العقد القاعدية التلقائية
+          </h2>
+          <p id="sec3Subtitle" class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-1">
+            يوضح راسل بولدراك أن التغيير ليس معركة أخلاقية، بل صراع بيولوجي بين منطقتين في الدماغ. حرّك المؤشرات لترى متى تنهار الإرادة ومتى تنتصر هندسة البيئة!
+          </p>
+        </div>
+
+        <!-- Quick Scenario Preset Buttons -->
+        <div class="flex flex-wrap gap-2">
+          <button onclick="applyBrainScenario(85, 90, 95, 15)" id="scenBtn2AM" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800 hover:bg-rose-100 transition">
+            <i class="fa-solid fa-moon mr-1 ml-1"></i> فخ 2 صباحاً (إرهاق + هاتف قريب)
+          </button>
+          <button onclick="applyBrainScenario(90, 60, 80, 30)" id="scenBtnStress" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800 hover:bg-amber-100 transition">
+            <i class="fa-solid fa-fire mr-1 ml-1"></i> يوم ضغط نفسي وامتحانات
+          </button>
+          <button onclick="applyBrainScenario(35, 30, 15, 80)" id="scenBtnEngineered" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 transition">
+            <i class="fa-solid fa-shield-halved mr-1 ml-1"></i> بيئة مُهندَسة (إبعاد الإشارات)
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Sliders Column (5 Cols) -->
+        <div class="lg:col-span-5 space-y-5 bg-slate-50 dark:bg-slate-800/40 p-5 sm:p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800">
+          
+          <!-- Slider 1: Stress -->
+          <div class="space-y-1.5">
+            <div class="flex justify-between text-xs sm:text-sm font-bold">
+              <label for="sliderStress" id="lblSliderStress" class="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                <i class="fa-solid fa-bolt text-rose-500"></i> مستوى التوتر والضغط النفسي
+              </label>
+              <span id="valStress" class="font-mono text-rose-600 dark:text-rose-400">70%</span>
+            </div>
+            <input id="sliderStress" type="range" min="0" max="100" value="70" oninput="updateBrainSimulator()" class="w-full bg-slate-200 dark:bg-slate-700" />
+            <p id="hintSliderStress" class="text-[11px] text-slate-500 dark:text-slate-400">التوتر يُعطّل القشرة الجبهية ويدفع الدماغ للعودة للمسارات القديمة المألوفة.</p>
+          </div>
+
+          <!-- Slider 2: Fatigue -->
+          <div class="space-y-1.5">
+            <div class="flex justify-between text-xs sm:text-sm font-bold">
+              <label for="sliderFatigue" id="lblSliderFatigue" class="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                <i class="fa-solid fa-battery-quarter text-amber-500"></i> الإرهاق ونقص النوم (نفاذ طاقة الـ 20%)
+              </label>
+              <span id="valFatigue" class="font-mono text-amber-600 dark:text-amber-400">75%</span>
+            </div>
+            <input id="sliderFatigue" type="range" min="0" max="100" value="75" oninput="updateBrainSimulator()" class="w-full bg-slate-200 dark:bg-slate-700" />
+            <p id="hintSliderFatigue" class="text-[11px] text-slate-500 dark:text-slate-400">النظام الواعي يستهلك طاقة هائلة ويتعب بسرعة في آخر اليوم.</p>
+          </div>
+
+          <!-- Slider 3: Environmental Cues -->
+          <div class="space-y-1.5">
+            <div class="flex justify-between text-xs sm:text-sm font-bold">
+              <label for="sliderCues" id="lblSliderCues" class="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                <i class="fa-solid fa-magnet text-violet-500"></i> قرب الإشارات في البيئة (مثل الهاتف بجانبك)
+              </label>
+              <span id="valCues" class="font-mono text-violet-600 dark:text-violet-400">85%</span>
+            </div>
+            <input id="sliderCues" type="range" min="0" max="100" value="85" oninput="updateBrainSimulator()" class="w-full bg-slate-200 dark:bg-slate-700" />
+            <p id="hintSliderCues" class="text-[11px] text-slate-500 dark:text-slate-400">وجود الإشارة يطلق الدوبامين فوراً ويخلق رغبة ملحة قبل أن تفكر.</p>
+          </div>
+
+          <!-- Slider 4: New Habit Repetition -->
+          <div class="space-y-1.5">
+            <div class="flex justify-between text-xs sm:text-sm font-bold">
+              <label for="sliderRepetition" id="lblSliderRepetition" class="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                <i class="fa-solid fa-dumbbell text-emerald-500"></i> قوة تكرار المسار العصبي الجديد
+              </label>
+              <span id="valRepetition" class="font-mono text-emerald-600 dark:text-emerald-400">25%</span>
+            </div>
+            <input id="sliderRepetition" type="range" min="0" max="100" value="25" oninput="updateBrainSimulator()" class="w-full bg-slate-200 dark:bg-slate-700" />
+            <p id="hintSliderRepetition" class="text-[11px] text-slate-500 dark:text-slate-400">المسارات القديمة لا تُمحى، لكن التكرار يبني مساراً جديداً أقوى منها.</p>
+          </div>
+
+        </div>
+
+        <!-- Visual Brain SVG & Battle Meter (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Interactive SVG Brain Map -->
+          <div class="relative rounded-2xl bg-slate-900 text-white p-5 sm:p-6 border border-slate-800 overflow-hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+              
+              <!-- Brain Diagram SVG -->
+              <div class="sm:col-span-6 flex justify-center">
+                <svg viewBox="0 0 320 240" class="w-full max-w-[290px] h-auto drop-shadow-lg">
+                  <defs>
+                    <radialGradient id="pfcGrad" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9"/>
+                      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.25"/>
+                    </radialGradient>
+                    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.95"/>
+                      <stop offset="100%" stop-color="#be123c" stop-opacity="0.25"/>
+                    </radialGradient>
+                  </defs>
+
+                  <!-- Outer Brain Silhouette -->
+                  <path d="M75,175 C40,170 25,140 30,108 C32,75 55,48 90,38 C125,22 175,20 215,35 C255,50 282,82 280,122 C278,155 255,178 220,182 C205,198 185,212 165,212 C150,212 145,190 135,180 Z" 
+                        fill="#1e293b" stroke="#475569" stroke-width="3" />
+                  
+                  <!-- Brain Gyri Decorative Lines -->
+                  <path d="M95,55 Q135,70 160,45 M140,85 Q185,65 230,90 M85,125 Q130,110 175,135 M190,145 Q230,130 255,150" 
+                        fill="none" stroke="#334155" stroke-width="2.5" stroke-linecap="round" />
+
+                  <!-- Prefrontal Cortex (Front Left Region) -->
+                  <g id="svgPfcGroup" class="transition-all duration-300">
+                    <path id="svgPfcShape" d="M32,108 C34,76 56,50 92,40 C112,55 118,88 108,125 C88,148 55,152 38,136 Z" 
+                          fill="url(#pfcGrad)" stroke="#38bdf8" stroke-width="2.5" />
+                    <circle cx="72" cy="95" r="7" fill="#e0f2fe" class="animate-ping" />
+                    <circle cx="72" cy="95" r="5" fill="#38bdf8" />
+                  </g>
+
+                  <!-- Basal Ganglia (Deep Center Core) -->
+                  <g id="svgBgGroup" class="transition-all duration-300">
+                    <ellipse id="svgBgShape" cx="168" cy="118" rx="44" ry="32" fill="url(#bgGrad)" stroke="#fb7185" stroke-width="2.5" />
+                    <circle cx="168" cy="118" r="8" fill="#ffe4e6" class="animate-ping" />
+                    <circle cx="168" cy="118" r="5" fill="#f43f5e" />
+                  </g>
+
+                  <!-- Neural Pathway Line Connecting Cue -> Basal Ganglia vs PFC -->
+                  <path id="svgNeuralArc" d="M72,95 Q120,65 168,118" fill="none" stroke="#a855f7" stroke-width="3" class="neural-path-animated" />
+                </svg>
+              </div>
+
+              <!-- Brain Regions Legend & Live Power Percentage -->
+              <div class="sm:col-span-6 space-y-3.5">
+                <!-- Conscious System Box -->
+                <div class="p-3.5 rounded-xl bg-sky-950/60 border border-sky-500/40">
+                  <div class="flex items-center justify-between">
+                    <span id="pfcTitle" class="text-xs font-extrabold text-sky-300 uppercase">القشرة الجبهية الأمامية (النظام الواعي)</span>
+                    <span id="pfcPowerText" class="font-mono text-lg font-black text-sky-400">32%</span>
+                  </div>
+                  <p id="pfcRoleDesc" class="text-[11px] text-slate-300 mt-1">
+                    مسؤولة عن التخطيط، القرارات، وضبط النفس. لكنها بطيئة وتتعب سريعاً مع الإرهاق والتوتر.
+                  </p>
+                </div>
+
+                <!-- Automatic System Box -->
+                <div class="p-3.5 rounded-xl bg-rose-950/60 border border-rose-500/40">
+                  <div class="flex items-center justify-between">
+                    <span id="bgTitle" class="text-xs font-extrabold text-rose-300 uppercase">العقد القاعدية (النظام التلقائي)</span>
+                    <span id="bgPowerText" class="font-mono text-lg font-black text-rose-400">68%</span>
+                  </div>
+                  <p id="bgRoleDesc" class="text-[11px] text-slate-300 mt-1">
+                    خزينة العادات العميقة. سريعة جداً، تعمل بلا مجهود، ولا تنسى المسارات العصبية القديمة أبداً.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Tug of War Progress Bar -->
+            <div class="mt-5 space-y-2">
+              <div class="flex justify-between text-xs font-extrabold">
+                <span id="barLabelConscious" class="text-sky-400"><i class="fa-solid fa-brain"></i> سيطرة النظام الواعي</span>
+                <span id="barLabelAuto" class="text-rose-400">سيطرة العادة التلقائية <i class="fa-solid fa-robot"></i></span>
+              </div>
+              <div class="w-full h-4 rounded-full bg-rose-600/90 overflow-hidden flex p-0.5 border border-slate-700">
+                <div id="battleBarConscious" class="h-full bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full transition-all duration-300" style="width: 32%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Real-Time Neuroscience Diagnosis Banner -->
+          <div id="battleDiagnosisBox" class="p-5 rounded-2xl border-2 transition-all">
+            <div class="flex items-start gap-3.5">
+              <div id="battleDiagIcon" class="w-11 h-11 rounded-2xl flex items-center justify-center shrink-0 text-xl"></div>
+              <div class="space-y-1">
+                <h4 id="battleDiagTitle" class="font-black text-base sm:text-lg"></h4>
+                <p id="battleDiagText" class="text-xs sm:text-sm leading-relaxed"></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. INTERACTIVE TOOL 3: MY HABIT ENGINEERING WORKSHOP & NEURAL TRACKER ==================== -->
+    <section id="workshop" class="space-y-8 bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+        <div>
+          <span id="sec4Badge" class="inline-block text-xs font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/80 px-3 py-1 rounded-full mb-2">
+            الأداة التفاعلية الثالثة • تطبيق عملي يُحفظ تلقائياً
+          </span>
+          <h2 id="sec4Title" class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
+            ورشة هندسة العادات ومتتبع المسارات العصبية
+          </h2>
+          <p id="sec4Subtitle" class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-1">
+            يؤكد الفيديو أن المسارات العصبية القديمة لا تُمحى، بل نبني مساراً جديداً أقوى بجانبها عبر التكرار وهندسة البيئة. صمم خطتك وتابع قوة المسار العصبي يومياً!
+          </p>
+        </div>
+
+        <button onclick="resetDefaultWorkshopHabits()" id="btnResetWorkshop" class="self-start md:self-auto px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+          <i class="fa-solid fa-rotate-right mr-1 ml-1"></i> استعادة الأمثلة الافتراضية
+        </button>
+      </div>
+
+      <!-- Add New Engineered Habit Form -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 space-y-4">
+        <h3 id="workshopFormTitle" class="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white flex items-center gap-2">
+          <i class="fa-solid fa-plus-circle text-indigo-500"></i>
+          <span>إضافة مشروع هندسة عادة جديدة:</span>
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div>
+            <label id="lblWsBad" class="block text-xs font-bold mb-1.5 text-slate-700 dark:text-slate-300">العادة السيئة المراد تركها</label>
+            <input id="wsInpBad" type="text" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-sm focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="مثال: السهر على الهاتف" />
+          </div>
+          <div>
+            <label id="lblWsCueRemove" class="block text-xs font-bold mb-1.5 text-slate-700 dark:text-slate-300">1. كيف ستزيل الإشارة وتصعّبها؟</label>
+            <input id="wsInpFriction" type="text" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-sm focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="مثال: شحن الهاتف خارج غرفة النوم" />
+          </div>
+          <div>
+            <label id="lblWsGoodEasy" class="block text-xs font-bold mb-1.5 text-slate-700 dark:text-slate-300">2. العادة البديلة وكيف ستسهلها؟</label>
+            <input id="wsInpEasyGood" type="text" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-sm focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="مثال: وضع كتاب على الوسادة" />
+          </div>
+          <div class="flex items-end">
+            <button onclick="addWorkshopHabit()" class="w-full py-2.5 px-4 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 shadow-md shadow-emerald-600/20 active:scale-95 transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-plus"></i>
+              <span id="btnAddWsHabit">إضافة للمتتبع العصبي</span>
+            </button>
+          </div>
+        </div>
+        <p id="wsValidationMsg" class="hidden text-xs font-bold text-rose-600 dark:text-rose-400"></p>
+      </div>
+
+      <!-- Tracked Habits Cards Grid -->
+      <div id="workshopCardsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- ==================== 6. INTERACTIVE NEUROSCIENCE QUIZ ==================== -->
+    <section id="quiz" class="space-y-8 bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+        <div>
+          <span id="sec5Badge" class="inline-block text-xs font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/80 px-3 py-1 rounded-full mb-2">
+            الأداة التفاعلية الرابعة • 5 أسئلة علمية
+          </span>
+          <h2 id="sec5Title" class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
+            اختبر فهمك لعلم أعصاب العادات
+          </h2>
+          <p id="sec5Subtitle" class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-1">
+            تأكد من استيعابك لأهم الحقائق العلمية التي ذكرها راسل بولدراك في الفيديو.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="px-4 py-2 rounded-2xl bg-indigo-50 dark:bg-indigo-950/80 border border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 font-extrabold text-sm">
+            <span id="quizScoreLabel">النتيجة:</span> <span id="quizScoreVal">0 / 5</span>
+          </div>
+          <button onclick="resetQuiz()" id="btnResetQuiz" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition">
+            <i class="fa-solid fa-rotate"></i> <span id="resetQuizText">إعادة الاختبار</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="quizQuestionsContainer" class="space-y-6">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== REQUIRED FOOTER WITH DESIGN CREDIT ==================== -->
+  <footer class="relative z-10 border-t border-slate-200 dark:border-slate-800/90 bg-white/90 dark:bg-[#050811]/95 py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto flex flex-col items-center text-center space-y-5">
+      
+      <!-- Channel & Book Attribution -->
+      <div class="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+        <span id="footerSourceText">المحتوى العلمي مستند إلى فيديو قناة <strong>Abouawd Studio</strong> وكتاب <strong>Hard to Break</strong> لعالم الأعصاب راسل بولدراك</span>
+        <span>•</span>
+        <a href="https://youtu.be/HFfz_W0HCm4?si=2faFR6dL3adB75W9" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 font-bold hover:underline inline-flex items-center gap-1">
+          <i class="fa-brands fa-youtube text-rose-500"></i>
+          <span id="footerWatchLink">رابط الفيديو على يوتيوب</span>
+        </a>
+      </div>
+
+      <!-- Prominent Required Signature Badge -->
+      <div class="px-6 py-4 rounded-2xl bg-gradient-to-r from-indigo-500/10 via-violet-500/15 to-cyan-500/10 dark:from-indigo-500/20 dark:via-violet-500/20 dark:to-cyan-500/20 border border-indigo-300/60 dark:border-indigo-700/60 shadow-lg">
+        <p id="footerCreditPrimary" class="text-base sm:text-lg font-black tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-violet-600 to-cyan-600 dark:from-indigo-300 dark:via-violet-300 dark:to-cyan-300">
+          تصميم محمد عوض خير بمساعدة Gemini 4 Argon
+        </p>
+        <p id="footerCreditSecondary" class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">
+          Designed by Mohamed Awad Khair with the help of Gemini 4 Argon
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== APPLICATION JAVASCRIPT & BILINGUAL DATA ==================== -->
+  <script>
+    // Current State
+    let currentLang = 'ar';
+    let currentChapterIndex = 0;
+    let currentPresetKey = 'scrolling';
+    let quizAnswers = {}; // { questionIdx: selectedOptionIdx }
+    let workshopHabits = [];
+
+    // Complete Bilingual Dictionary
+    const i18n = {
+      ar: {
+        navBrandTitle: "هندسة العادات العصبية",
+        navBrandSubtitle: "خلاصة كتاب Hard to Break - راسل بولدراك",
+        navLinkChapters: "خريطة الفيديو",
+        navLinkLoop: "محلل حلقة العادة",
+        navLinkBattle: "محاكي صراع الدماغ",
+        navLinkWorkshop: "ورشة بناء العادات",
+        navLinkQuiz: "اختبار الفهم",
+        langToggleText: "English",
+
+        heroBadge: "ملخص تفاعلي لكتاب راسل بولدراك • قناة Abouawd Studio",
+        heroTitle: 'كيف تتخلص من العادات السيئة؟ <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-violet-500 to-cyan-500 dark:from-indigo-400 dark:via-violet-400 dark:to-cyan-300">علم الأعصاب وراء التغيير</span>',
+        hero2AmTitle: "فخ الساعة 2:00 صباحاً الشهير:",
+        hero2AmDesc: '"سأفتح الهاتف لمدة 5 دقائق فقط قبل النوم..." وفجأة ترفع رأسك لتجد الساعة 4:00 فجراً! المشكلة ليست أنك "ضعيف الإرادة"، بل لأن دماغك مصمم بيولوجياً للحفاظ على العادات كاختصارات لتوفير الطاقة.',
+        heroSubtext: "استكشف من خلال هذا التطبيق التفاعلي كيف تتشكل العادات داخل <strong>العقد القاعدية</strong>، ولماذا يعتبر <strong>الدوبامين</strong> هرمون التوقع وليس السعادة، وكيف تستخدم <strong>هندسة السلوك</strong> لهزيمة العادات السيئة دون الاعتماد على قوة الإرادة المحدودة.",
+        heroBtnStart: "ابدأ هندسة عاداتك الآن",
+        heroBtnVideo: "مشاهدة الفيديو الأصلي",
+
+        bookCardTitle: "Hard to Break",
+        bookCardAuthor: "د. راسل بولدراك (Russell Poldrack) - جامعة ستانفورد",
+        clockLabel1: "قرار النظام الواعي",
+        clockSub1: '"5 دقائق فقط"',
+        clockLoopLabel: "حلقة الدوبامين",
+        clockLabel2: "سيطرة النظام التلقائي",
+        clockSub2: '"ندم وإرهاق"',
+        stat1Desc: "من طاقة الجسم يستهلكها الدماغ، لذا يصنع العادات لتوفير الطاقة.",
+        stat2Desc: "أركان لحلقة العادة: الإشارة (Cue)، السلوك، والمكافأة.",
+        stat3Desc: "نظامان في صراع دائم: القشرة الجبهية الواعية ضد العقد القاعدية التلقائية.",
+        stat4Desc: "استراتيجيات عملية لهندسة البيئة وبناء مسارات عصبية جديدة.",
+
+        sec1Badge: "الفصول الزمنية التفاعلية • 9 محطات علمية",
+        sec1Title: "خريطة الفيديو العلمية (خطوة بخطوة مع التوقيت)",
+        sec1Subtitle: "اضغط على أي فصل زمني لاستعراض الشرح العصبي التفصيلي والقاعدة العملية المستخلصة منه، أو الانتقال مباشرة إلى نفس اللحظة في الفيديو.",
+
+        sec2Badge: "الأداة التفاعلية الأولى • [00:02:16 & 00:06:55]",
+        sec2Title: "محلل ومهندس حلقة العادة (Habit Loop Deconstructor)",
+        sec2Subtitle: "كل عادة تتكون من (إشارة ← توقع الدوبامين ← سلوك ← مكافأة). اختر عادة جاهزة أو أدخل عادتك الخاصة لتفكيكها وإعادة هندستها بالاستراتيجيات الأربع.",
+        customFormHeader: "أدخل تفاصيل العادة التي تريد تحليلها وهندستها:",
+        lblCustomCue: "1. الإشارة المحفزة (Cue)",
+        lblCustomBehavior: "2. السلوك التلقائي (Behavior)",
+        lblCustomGood: "3. العادة البديلة المرغوبة",
+        loopStep1Tag: "1. الإشارة (Cue)",
+        loopStep2Tag: "2. فخ الدوبامين (03:47)",
+        loopStep3Tag: "3. السلوك التلقائي",
+        loopStep4Tag: "4. المكافأة المؤقتة",
+        reEngHeader: "خطة هندسة السلوك الرباعية لكسر هذه الحلقة (من الدقيقة 06:55):",
+
+        sec3Badge: "الأداة التفاعلية الثانية • [00:03:11 - 00:06:02]",
+        sec3Title: "محاكي صراع النظامين: القشرة الجبهية الواعية ضد العقد القاعدية التلقائية",
+        sec3Subtitle: "يوضح راسل بولدراك أن التغيير ليس معركة أخلاقية، بل صراع بيولوجي بين منطقتين في الدماغ. حرّك المؤشرات لترى متى تنهار الإرادة ومتى تنتصر هندسة البيئة!",
+        scenBtn2AM: '<i class="fa-solid fa-moon mr-1 ml-1"></i> فخ 2 صباحاً (إرهاق + هاتف قريب)',
+        scenBtnStress: '<i class="fa-solid fa-fire mr-1 ml-1"></i> يوم ضغط نفسي وامتحانات',
+        scenBtnEngineered: '<i class="fa-solid fa-shield-halved mr-1 ml-1"></i> بيئة مُهندَسة (إبعاد الإشارات)',
+        lblSliderStress: '<i class="fa-solid fa-bolt text-rose-500"></i> مستوى التوتر والضغط النفسي',
+        hintSliderStress: "التوتر يُعطّل القشرة الجبهية ويدفع الدماغ للعودة للمسارات القديمة المألوفة.",
+        lblSliderFatigue: '<i class="fa-solid fa-battery-quarter text-amber-500"></i> الإرهاق ونقص النوم (نفاذ طاقة الـ 20%)',
+        hintSliderFatigue: "النظام الواعي يستهلك طاقة هائلة ويتعب بسرعة في آخر اليوم.",
+        lblSliderCues: '<i class="fa-solid fa-magnet text-violet-500"></i> قرب الإشارات في البيئة (مثل الهاتف بجانبك)',
+        hintSliderCues: "وجود الإشارة يطلق الدوبامين فوراً ويخلق رغبة ملحة قبل أن تفكر.",
+        lblSliderRepetition: '<i class="fa-solid fa-dumbbell text-emerald-500"></i> قوة تكرار المسار العصبي الجديد',
+        hintSliderRepetition: "المسارات القديمة لا تُمحى، لكن التكرار يبني مساراً جديداً أقوى منها.",
+        pfcTitle: "القشرة الجبهية الأمامية (النظام الواعي)",
+        pfcRoleDesc: "مسؤولة عن التخطيط، القرارات، وضبط النفس. لكنها بطيئة وتتعب سريعاً مع الإرهاق والتوتر.",
+        bgTitle: "العقد القاعدية (النظام التلقائي)",
+        bgRoleDesc: "خزينة العادات العميقة. سريعة جداً، تعمل بلا مجهود، ولا تنسى المسارات العصبية القديمة أبداً.",
+        barLabelConscious: '<i class="fa-solid fa-brain"></i> سيطرة النظام الواعي',
+        barLabelAuto: 'سيطرة العادة التلقائية <i class="fa-solid fa-robot"></i>',
+
+        sec4Badge: "الأداة التفاعلية الثالثة • تطبيق عملي يُحفظ تلقائياً",
+        sec4Title: "ورشة هندسة العادات ومتتبع المسارات العصبية",
+        sec4Subtitle: "يؤكد الفيديو أن المسارات العصبية القديمة لا تُمحى، بل نبني مساراً جديداً أقوى بجانبها عبر التكرار وهندسة البيئة. صمم خطتك وتابع قوة المسار العصبي يومياً!",
+        btnResetWorkshop: '<i class="fa-solid fa-rotate-right mr-1 ml-1"></i> استعادة الأمثلة الافتراضية',
+        workshopFormTitle: "إضافة مشروع هندسة عادة جديدة:",
+        lblWsBad: "العادة السيئة المراد تركها",
+        lblWsCueRemove: "1. كيف ستزيل الإشارة وتصعّبها؟",
+        lblWsGoodEasy: "2. العادة البديلة وكيف ستسهلها؟",
+        btnAddWsHabit: "إضافة للمتتبع العصبي",
+        wsValidationErr: "يرجى إدخال اسم العادة وخطة إزالة الإشارة والعادة البديلة أولاً.",
+
+        sec5Badge: "الأداة التفاعلية الرابعة • 5 أسئلة علمية",
+        sec5Title: "اختبر فهمك لعلم أعصاب العادات",
+        sec5Subtitle: "تأكد من استيعابك لأهم الحقائق العلمية التي ذكرها راسل بولدراك في الفيديو.",
+        quizScoreLabel: "النتيجة:",
+        resetQuizText: "إعادة الاختبار",
+
+        footerSourceText: 'المحتوى العلمي مستند إلى فيديو قناة <strong>Abouawd Studio</strong> وكتاب <strong>Hard to Break</strong> لعالم الأعصاب راسل بولدراك',
+        footerWatchLink: "رابط الفيديو على يوتيوب",
+        footerCreditPrimary: "تصميم محمد عوض خير بمساعدة Gemini 4 Argon",
+        footerCreditSecondary: "Designed by Mohamed Awad Khair with the help of Gemini 4 Argon"
+      },
+      en: {
+        navBrandTitle: "NeuroHabit Engineering",
+        navBrandSubtitle: "Summary of 'Hard to Break' by Russell Poldrack",
+        navLinkChapters: "Video Timeline",
+        navLinkLoop: "Habit Loop Lab",
+        navLinkBattle: "Brain Battle Sim",
+        navLinkWorkshop: "Habit Workshop",
+        navLinkQuiz: "Neuro Quiz",
+        langToggleText: "العربية",
+
+        heroBadge: "Interactive Book Summary • Russell Poldrack • Abouawd Studio",
+        heroTitle: 'How to Break Bad Habits? <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-violet-500 to-cyan-500 dark:from-indigo-400 dark:via-violet-400 dark:to-cyan-300">The Neuroscience of Change</span>',
+        hero2AmTitle: "The Famous 2:00 AM Phone Trap:",
+        hero2AmDesc: '"I\'ll just check my phone for 5 minutes before sleep..." Suddenly you look up and it\'s 4:00 AM! The problem isn\'t "weak willpower"—your brain is biologically wired to turn behaviors into automatic shortcuts to save energy.',
+        heroSubtext: "Explore interactively how habits are etched inside the <strong>Basal Ganglia</strong>, why <strong>Dopamine</strong> is the hormone of anticipation rather than pleasure, and how to use <strong>Behavior Engineering</strong> to defeat bad habits without relying on fragile willpower.",
+        heroBtnStart: "Start Engineering Your Habits",
+        heroBtnVideo: "Watch Original Video",
+
+        bookCardTitle: "Hard to Break",
+        bookCardAuthor: "Dr. Russell Poldrack - Stanford University Neuroscientist",
+        clockLabel1: "Conscious Decision",
+        clockSub1: '"Just 5 minutes"',
+        clockLoopLabel: "Dopamine Loop",
+        clockLabel2: "Automatic Takeover",
+        clockSub2: '"Exhaustion & Regret"',
+        stat1Desc: "Of the body's energy is consumed by the brain—so it creates habits to save energy.",
+        stat2Desc: "Core components of every Habit Loop: Cue, Behavior, and Reward.",
+        stat3Desc: "Competing brain systems: Conscious Prefrontal Cortex vs. Automatic Basal Ganglia.",
+        stat4Desc: "Actionable strategies to re-engineer your environment and build new neural pathways.",
+
+        sec1Badge: "Interactive Video Chapters • 9 Scientific Milestones",
+        sec1Title: "Scientific Video Timeline (Step-by-Step with Timestamps)",
+        sec1Subtitle: "Click any chapter to explore the detailed neuroscience breakdown and practical takeaway, or jump directly to that exact timestamp on YouTube.",
+
+        sec2Badge: "Interactive Tool 1 • [00:02:16 & 00:06:55]",
+        sec2Title: "Habit Loop Deconstructor & Behavior Re-Engineer",
+        sec2Subtitle: "Every habit follows (Cue → Dopamine Anticipation → Behavior → Reward). Pick a preset habit or enter your own to deconstruct it and generate a 4-Step Engineering Plan.",
+        customFormHeader: "Enter the details of the habit you want to analyze and re-engineer:",
+        lblCustomCue: "1. Triggering Cue",
+        lblCustomBehavior: "2. Automatic Bad Behavior",
+        lblCustomGood: "3. Desired Replacement Habit",
+        loopStep1Tag: "1. The Cue",
+        loopStep2Tag: "2. Dopamine Trap (03:47)",
+        loopStep3Tag: "3. Automatic Behavior",
+        loopStep4Tag: "4. Short-Term Reward",
+        reEngHeader: "4-Strategy Behavior Engineering Blueprint (From 06:55):",
+
+        sec3Badge: "Interactive Tool 2 • [00:03:11 - 00:06:02]",
+        sec3Title: "Brain Battle Simulator: Prefrontal Cortex vs. Basal Ganglia",
+        sec3Subtitle: "Russell Poldrack explains that habit change isn't a moral struggle—it's a biological tug-of-war between two brain systems. Adjust the sliders to see when willpower collapses and how Environment Engineering wins!",
+        scenBtn2AM: '<i class="fa-solid fa-moon mr-1 ml-1"></i> 2 AM Trap (Tired + Phone Nearby)',
+        scenBtnStress: '<i class="fa-solid fa-fire mr-1 ml-1"></i> High Exam / Work Stress',
+        scenBtnEngineered: '<i class="fa-solid fa-shield-halved mr-1 ml-1"></i> Engineered Environment (Cues Removed)',
+        lblSliderStress: '<i class="fa-solid fa-bolt text-rose-500"></i> Psychological Stress Level',
+        hintSliderStress: "Stress impairs the Prefrontal Cortex and forces the brain back into old, familiar neural pathways.",
+        lblSliderFatigue: '<i class="fa-solid fa-battery-quarter text-amber-500"></i> Fatigue & Sleep Deprivation (20% Energy Drain)',
+        hintSliderFatigue: "The conscious system demands heavy energy and fatigues rapidly late at night.",
+        lblSliderCues: '<i class="fa-solid fa-magnet text-violet-500"></i> Environmental Cue Proximity (e.g., Phone in Bed)',
+        hintSliderCues: "Seeing a cue triggers an immediate dopamine spike and craving before conscious thought.",
+        lblSliderRepetition: '<i class="fa-solid fa-dumbbell text-emerald-500"></i> New Neural Pathway Repetition Strength',
+        hintSliderRepetition: "Old pathways never vanish, but repetition builds a stronger competing pathway.",
+        pfcTitle: "Prefrontal Cortex (Conscious System)",
+        pfcRoleDesc: "Handles planning, rational decisions, and self-control. Slow, energy-hungry, and fatigues under stress.",
+        bgTitle: "Basal Ganglia (Automatic System)",
+        bgRoleDesc: "Deep habit vault. Lightning-fast, effortless, and never erases old neural pathways.",
+        barLabelConscious: '<i class="fa-solid fa-brain"></i> Conscious System Control',
+        barLabelAuto: 'Automatic Habit Control <i class="fa-solid fa-robot"></i>',
+
+        sec4Badge: "Interactive Tool 3 • Saved Automatically in Browser",
+        sec4Title: "My Habit Engineering Workshop & Neural Pathway Tracker",
+        sec4Subtitle: "Since old neural pathways are never erased, we must build a stronger parallel pathway through environment design and daily repetition. Build your plan and strengthen your neural pathway daily!",
+        btnResetWorkshop: '<i class="fa-solid fa-rotate-right mr-1 ml-1"></i> Restore Default Examples',
+        workshopFormTitle: "Create a New Habit Engineering Project:",
+        lblWsBad: "Bad Habit to Break",
+        lblWsCueRemove: "1. How will you remove the cue & add friction?",
+        lblWsGoodEasy: "2. Replacement habit & how to make it easy?",
+        btnAddWsHabit: "Add to Neural Tracker",
+        wsValidationErr: "Please fill in the habit name, friction strategy, and replacement habit first.",
+
+        sec5Badge: "Interactive Tool 4 • 5 Neuroscience Questions",
+        sec5Title: "Test Your Neuroscience of Habits Knowledge",
+        sec5Subtitle: "Check your understanding of the core scientific truths from Russell Poldrack's book and video.",
+        quizScoreLabel: "Score:",
+        resetQuizText: "Reset Quiz",
+
+        footerSourceText: 'Scientific content based on <strong>Abouawd Studio</strong> video & <strong>Hard to Break</strong> by neuroscientist Russell Poldrack',
+        footerWatchLink: "Watch Video on YouTube",
+        footerCreditPrimary: "Designed by Mohamed Awad Khair with the help of Gemini 4 Argon | تصميم محمد عوض خير بمساعدة Gemini 4 Argon",
+        footerCreditSecondary: "Interactive Educational Web Application • Bilingual & Dark Mode Ready"
+      }
+    };
+
+    // 9 Video Chapters Data (Matching exact timestamps from prompt)
+    const chaptersData = [
+      {
+        time: "00:00:00",
+        seconds: 0,
+        icon: "fa-clock",
+        color: "rose",
+        ar: {
+          title: "فخ الساعة ٢ صباحاً ووهم ضعف الإرادة",
+          summary: "تقرر فتح الهاتف لمدة 5 دقائق فقط، وفجأة تجد الساعة 4 فجراً! لماذا نفعل أشياء نعلم أنها تضرنا؟",
+          science: "يوضح عالم الأعصاب راسل بولدراك في كتابه (Hard to Break) أن الفشل في ترك العادات السيئة ليس سببه 'ضعف الإرادة' أو نقص الأخلاق، بل لأننا نحاول تغيير عاداتنا بطريقة تعاكس تماماً الطريقة التي يعمل بها الدماغ البشري.",
+          action: "توقف عن جلد ذاتك؛ ابدأ بفهم آلية عمل الدماغ بدلاً من الاعتماد على الوعود الحماسية المؤقتة."
+        },
+        en: {
+          title: "The 2 AM Trap & The Myth of Weak Willpower",
+          summary: "You open your phone at 2 AM for 'just 5 minutes' and suddenly it's 4 AM! Why do we repeat behaviors we know hurt us?",
+          science: "In 'Hard to Break', neuroscientist Russell Poldrack explains that failing to quit bad habits isn't due to 'weak willpower'—it happens because we try to change habits in a way that fights against our brain's biological wiring.",
+          action: "Stop blaming willpower; shift from emotional guilt to understanding your brain's operating system."
+        }
+      },
+      {
+        time: "00:00:58",
+        seconds: 58,
+        icon: "fa-battery-Bolt",
+        color: "amber",
+        ar: {
+          title: "الحقيقة الأولى: العادات اختصارات لتوفير 20% من طاقة الدماغ",
+          summary: "الدماغ ليس عدوك، بل هو آلة اقتصادية تحاول توفير الطاقة عبر تحويل السلوك المتكرر إلى 'طيار آلي'.",
+          science: "رغم أن وزن الدماغ لا يتجاوز 2% من وزن الجسم، إلا أنه يستهلك حوالي 20% من طاقة الجسم الكلية! التخطيط والتفكير الواعي يستهلكان طاقة هائلة، لذلك يقوم الدماغ بتحويل أي سلوك متكرر (مثل القيادة أو فتح الهاتف) إلى عادة تلقائية لتوفير الطاقة لأمور أخرى.",
+          action: "ادرك أن دماغك لا يميز بين عادة نافعة أو ضارة؛ هو فقط يحافظ على أي سلوك يتكرر لأنه يوفر الطاقة."
+        },
+        en: {
+          title: "Fact 1: Habits Are Shortcuts Saving 20% Brain Energy",
+          summary: "Your brain isn't your enemy; it's an energy-saving machine turning repeated actions into autopilot routines.",
+          science: "The human brain consumes roughly 20% of the body's total energy! Conscious thinking and decision-making are metabolically expensive, so the brain converts repeated actions (like driving or checking your phone) into automatic habits to conserve energy.",
+          action: "Realize your brain doesn't judge whether a habit is good or bad—it simply automates whatever you repeat."
+        }
+      },
+      {
+        time: "00:02:16",
+        seconds: 136,
+        icon: "fa-arrows-spin",
+        color: "indigo",
+        ar: {
+          title: "حلقة العادة: الإشارة، السلوك، المكافأة",
+          summary: "كل عادة في حياتك تتكون من ثلاث خطوات مترابطة تتكرر حتى تصبح لاواعية تماماً.",
+          science: "1) الإشارة (Cue): مثل الشعور بالملل أو سماع إشعار الهاتف. 2) السلوك (Behavior): فتح التطبيق وتصفح الفيديوهات. 3) المكافأة (Reward): شعور فوري بالتسلية أو الهروب من التوتر. مع التكرار تندمج هذه الثلاثية في مسار عصبي واحد فائق السرعة.",
+          action: "لتفكيك أي عادة سيئة، حدد بدقة: ما هي الإشارة التي تسبقها؟ وما المكافأة النفسية التي يبحث عنها دماغك؟"
+        },
+        en: {
+          title: "The Habit Loop: Cue, Behavior, Reward",
+          summary: "Every habit consists of three linked stages that fuse together through repetition.",
+          science: "1) Cue: Boredom, stress, or seeing your phone. 2) Behavior: Unlocking the screen and scrolling reels. 3) Reward: Instant distraction or relief. With repetition, these three steps merge into a single lightning-fast neural chunk.",
+          action: "To break any habit, first map out its exact triggering Cue and the hidden Reward your brain seeks."
+        }
+      },
+      {
+        time: "00:03:11",
+        seconds: 191,
+        icon: "fa-brain",
+        color: "violet",
+        ar: {
+          title: "أين تعيش العادات؟ العقد القاعدية ضد القشرة الجبهية",
+          summary: "في البداية تتحكم القشرة الجبهية الواعية بالسلوك، لكن مع التكرار تنتقل القيادة إلى العقد القاعدية العميقة.",
+          science: "عندما تتعلم شيئاً جديداً تعمل 'القشرة الجبهية الأمامية' (Prefrontal Cortex) المسؤولة عن القرار الواعي. لكن بمجرد تكرار السلوك، ينتقل التحكم إلى منطقة عميقة تسمى 'العقد القاعدية' (Basal Ganglia) التي تعمل بسرعة فائقة وبدون استهلاك طاقة واعية.",
+          action: "لهذا السبب تجد إصبعك يفتح تطبيقات التواصل تلقائياً قبل أن تتخذ قراراً واعياً بذلك!"
+        },
+        en: {
+          title: "Where Habits Live: Basal Ganglia vs. Prefrontal Cortex",
+          summary: "New actions start in the conscious Prefrontal Cortex, but repetition hands control over to the deep Basal Ganglia.",
+          science: "Initially, the Prefrontal Cortex (conscious planning) directs your behavior. Once repeated enough, control shifts to a deep brain structure called the Basal Ganglia—which executes routines automatically and effortlessly before conscious thought.",
+          action: "That's why your thumb opens social media apps automatically before you even consciously decide to!"
+        }
+      },
+      {
+        time: "00:03:47",
+        seconds: 227,
+        icon: "fa-bolt-lightning",
+        color: "cyan",
+        ar: {
+          title: "الدوبامين: هرمون التوقع والرغبة وليس السعادة!",
+          summary: "مفاجأة علمية: الدوبامين لا يُفرز بعد حصولك على المكافأة فقط، بل يقفز بمجرد رؤية 'الإشارة'!",
+          science: "يصحح راسل بولدراك المفهوم الشائع: الدوبامين ليس هرمون السعادة بل 'هرمون التوقع والدافع'. بمجرد أن ترى الهاتف أو تشم رائحة القهوة (الإشارة)، يفرز دماغك الدوبامين ليخلق شعوراً ملحاً بالرغبة (Craving) يدفعك لتنفيذ السلوك فوراً.",
+          action: "إذا منعت نفسك من رؤية الإشارة من الأساس، فلن يرتفع الدوبامين ولن تشعر بضغط الرغبة الملحة."
+        },
+        en: {
+          title: "Dopamine: The Hormone of Anticipation, Not Happiness",
+          summary: "Scientific plot twist: Dopamine spikes right when you see the Cue—creating intense craving before the action!",
+          science: "Russell Poldrack debunks the myth: Dopamine isn't about pleasure; it's about anticipation and motivation. Once a habit is formed, dopamine spikes the moment you see the Cue (e.g., seeing your phone), generating an urgent craving to act.",
+          action: "If you hide the Cue from your sight, you prevent the premature dopamine spike and avoid the craving altogether."
+        }
+      },
+      {
+        time: "00:04:44",
+        seconds: 284,
+        icon: "fa-road-circle-exclamation",
+        color: "amber",
+        ar: {
+          title: "لماذا تحدث الانتكاسة؟ المسارات العصبية لا تُمحى أبداً",
+          summary: "لماذا يعود الشخص للعادة القديمة بعد أسابيع من تركها بمجرد مروره بيوم سيء؟",
+          science: "الحقيقة الصادمة في علم الأعصاب هي أن الدماغ لا يمسح المسارات العصبية القديمة! عندما تترك عادة سيئة، أنت لا تمحوها، بل تبني مساراً جديداً بجانبها. وتحت الضغط النفسي أو الإرهاق، يضعف المسار الجديد ويعود الدماغ تلقائياً للمسار القديم الأقوى.",
+          action: "لا تحبط إذا حدثت زلة أثناء التوتر؛ افهم أنها استجابة بيولوجية للمسار القديم وارجع فوراً لحماية بيئتك."
+        },
+        en: {
+          title: "Why Relapse Happens: Neural Pathways Are Never Erased",
+          summary: "Why can someone quit a habit for weeks and suddenly relapse during a single stressful day?",
+          science: "Neuroscience shows the brain never completely deletes old habit pathways. Instead, you build a new pathway alongside the old one. Under high stress or exhaustion, the conscious system falters and the brain defaults to the older, deeply etched highway.",
+          action: "Protect yourself extra carefully during high-stress days by removing temptations in advance."
+        }
+      },
+      {
+        time: "00:05:20",
+        seconds: 320,
+        icon: "fa-scale-unbalanced",
+        color: "rose",
+        ar: {
+          title: "صراع النظامين: النظام الواعي ضد النظام التلقائي",
+          summary: "معركة غير متكافئة بين نظام واعي بطيء يتعب بسرعة، ونظام تلقائي سريع لا ينام!",
+          science: "يمتلك دماغك نظامين: 1) النظام الواعي (القشرة الجبهية): بطيء، يستهلك طاقة عالية، ويتعطل بالتعب والسهر. 2) النظام التلقائي (العقد القاعدية): سريع جداً، لا يحتاج طاقة، ويعمل بلا توقف. الاعتماد على 'قوة الإرادة' وحدها يعني خوض معركة خاسرة في نهاية اليوم.",
+          action: "لا تعتمد على قوة الإرادة ليلاً؛ اتخذ قراراتك مسبقاً عبر تصميم بيئتك وأنت في كامل نشاطك."
+        },
+        en: {
+          title: "Battle of Two Systems: Conscious vs. Automatic",
+          summary: "An unfair fight between a slow, easily exhausted conscious system and a fast, tireless automatic system.",
+          science: "Your brain runs two competing systems: 1) The Conscious System (Prefrontal Cortex): slow, energy-hungry, and weakened by fatigue. 2) The Automatic System (Basal Ganglia): fast, effortless, and always ready. Relying purely on willpower at night is a losing strategy.",
+          action: "Never rely on willpower when tired; pre-commit by designing your environment while energized."
+        }
+      },
+      {
+        time: "00:06:02",
+        seconds: 362,
+        icon: "fa-compass-drafting",
+        color: "emerald",
+        ar: {
+          title: "الحل الحقيقي: هندسة السلوك وتغيير البيئة",
+          summary: "الأشخاص الناجحون في تغيير عاداتهم لا يملكون إرادة خارقة، بل يملكون بيئة مُهندَسة بذكاء.",
+          science: "يسمي العلماء هذا المفهوم 'هندسة السلوك' (Behavior Engineering). بدلاً من مقاومة الإغراء في كل مرة، غيّر البيئة المحيطة بك بحيث لا تصطدم بالإشارة المحفزة للعادة السيئة أصلاً.",
+          action: "غيّر مكان الأشياء من حولك (في غرفتك، مكتبك، وهاتفك) لتجعل البيئة تعمل لصالحك لا ضدك."
+        },
+        en: {
+          title: "The Real Solution: Behavior Engineering & Environment Design",
+          summary: "People who successfully change habits don't have superhuman willpower—they engineer their environment.",
+          science: "Scientists call this 'Behavior Engineering'. Instead of fighting temptation 20 times a day with willpower, redesign your physical and digital surroundings so the triggering cues never reach your eyes.",
+          action: "Restructure your bedroom, desk, and phone home screen so your environment works for you, not against you."
+        }
+      },
+      {
+        time: "00:06:55",
+        seconds: 415,
+        icon: "fa-list-check",
+        color: "indigo",
+        ar: {
+          title: "الاستراتيجيات الأربع لبناء عادات جديدة وكسر القديمة",
+          summary: "القواعد العملية الأربع من كتاب راسل بولدراك لتحويل علم الأعصاب إلى نتائج يومية ملموسة.",
+          science: "1) إزالة الإشارات (وضع الهاتف في غرفة أخرى). 2) جعل العادة السيئة صعبة (حذف التطبيقات المضيعة للوقت). 3) جعل العادة الجيدة سهلة (وضع الكتاب بجانب السرير أو حذاء الجري عند الباب). 4) التكرار المستمر لتقوية المسار العصبي الجديد.",
+          action: "طبّق هذه القواعد الأربع الآن على عادة واحدة في أداة 'ورشة هندسة العادات' بالأسفل!"
+        },
+        en: {
+          title: "The 4 Practical Strategies to Build New Habits",
+          summary: "Russell Poldrack's 4-step actionable playbook to turn neuroscience into lasting behavioral change.",
+          science: "1) Remove Cues (put your phone in another room). 2) Make the Bad Habit Hard (delete time-wasting apps). 3) Make the Good Habit Easy (place a book on your pillow or running shoes by the door). 4) Repetition to strengthen the new neural pathway.",
+          action: "Apply all 4 steps right now to one habit using the 'Habit Engineering Workshop' below!"
+        }
+      }
+    ];
+
+    // Preset Habits Data for Tool 1 (Habit Loop Deconstructor)
+    const presetHabitsData = {
+      scrolling: {
+        icon: "fa-mobile-screen",
+        ar: {
+          label: "سهر الهاتف (2 صباحاً)",
+          cueTitle: "الاستلقاء في السرير + الهاتف بجانبك",
+          cueDesc: "رؤية شاشة الهاتف أو الشعور بالملل قبل النوم مباشرة.",
+          dopamineTitle: "قفزة دوبامين فورية للتوقع",
+          dopamineDesc: "يفرز الدماغ الدوبامين متوقعاً فيديوهات أو إشعارات مثيرة ('5 دقائق فقط').",
+          behaviorTitle: "تصفح لاواعي حتى 4:00 فجراً",
+          behaviorDesc: "تتولى العقد القاعدية التمرير التلقائي بينما القشرة الجبهية منهكة.",
+          rewardTitle: "تسلية سريعة وهروب من الملل",
+          rewardDesc: "مكافأة لحظية يعقبها ندم وإرهاق شديد في اليوم التالي.",
+          strategies: [
+            { title: "1. إزالة الإشارة", desc: "اشحن الهاتف في غرفة أخرى خارج غرفة النوم تماماً قبل الساعة 11 مساءً.", icon: "fa-eye-slash" },
+            { title: "2. تصعيب العادة السيئة", desc: "احذف تطبيقات الفيديو القصيرة أو فعّل قفل التطبيقات الليلي بكلمة سر طويلة.", icon: "fa-lock" },
+            { title: "3. تسهيل العادة الجيدة", desc: "ضع كتاباً ورقياً مفتوحاً على الوسادة مع إضاءة قراءة هادئة بجانب السرير.", icon: "fa-book-open" },
+            { title: "4. بناء المسار بالتكرار", desc: "كرر روتين (الهاتف بالخارج + قراءة صفحتين) لمدة 14 ليلة لتقوية المسار الجديد.", icon: "fa-repeat" }
+          ]
+        },
+        en: {
+          label: "2 AM Phone Scrolling",
+          cueTitle: "Lying in Bed + Phone Within Reach",
+          cueDesc: "Seeing your phone on the nightstand or feeling slight boredom before sleep.",
+          dopamineTitle: "Instant Anticipatory Dopamine Spike",
+          dopamineDesc: "Your brain releases dopamine anticipating novel reels or notifications ('just 5 mins').",
+          behaviorTitle: "Mindless Scrolling Until 4:00 AM",
+          behaviorDesc: "The Basal Ganglia takes over endless swiping while your Prefrontal Cortex is exhausted.",
+          rewardTitle: "Instant Novelty & Boredom Relief",
+          rewardDesc: "Short-term stimulation followed by sleep deprivation and regret the next morning.",
+          strategies: [
+            { title: "1. Remove the Cue", desc: "Charge your phone in another room outside the bedroom every night.", icon: "fa-eye-slash" },
+            { title: "2. Make Bad Habit Hard", desc: "Delete short-video apps or log out so opening them requires high friction.", icon: "fa-lock" },
+            { title: "3. Make Good Habit Easy", desc: "Place a physical book directly on your pillow with a warm bedside lamp.", icon: "fa-book-open" },
+            { title: "4. Neural Repetition", desc: "Repeat (Phone outside + 2 pages of reading) nightly to myelinate the new pathway.", icon: "fa-repeat" }
+          ]
+        }
+      },
+      study: {
+        icon: "fa-graduation-cap",
+        ar: {
+          label: "تشتت تيك توك أثناء المذاكرة",
+          cueTitle: "صعوبة فقرة دراسية أو إشعار",
+          cueDesc: "مواجهة مسألة تحتاج تركيزاً عالياً (استهلاك طاقة في القشرة الجبهية).",
+          dopamineTitle: "الهروب نحو مكافأة سريعة",
+          dopamineDesc: "ينفر الدماغ من الجهد العالي ويفرز الدوبامين بمجرد لمح أيقونة التطبيقات.",
+          behaviorTitle: "فتح السوشيال ميديا كل 10 دقائق",
+          behaviorDesc: "تقطع حبل أفكارك وتدخل في دوامة مقاطع قصيرة تضيع ساعات المذاكرة.",
+          rewardTitle: "راحة مؤقتة من ضغط المذاكرة",
+          rewardDesc: "تخفيف لحظي للتوتر لكن مع تراكم المهام وزيادة القلق لاحقاً.",
+          strategies: [
+            { title: "1. إزالة الإشارة", desc: "ضع الهاتف في درج مغلق أو في غرفة أخرى أثناء جلسة التركيز (Pomodoro).", icon: "fa-eye-slash" },
+            { title: "2. تصعيب العادة السيئة", desc: "احذف تطبيقات التشتت من الهاتف واستخدم حاضرات المواقع على الحاسوب.", icon: "fa-lock" },
+            { title: "3. تسهيل العادة الجيدة", desc: "جهّز مكتبك والملف المفتوح وورقة الملاحظات قبل البدء بحيث تبدأ في 5 ثوانٍ.", icon: "fa-book-open" },
+            { title: "4. بناء المسار بالتكرار", desc: "ابدأ بـ 25 دقيقة تركيز صافي بدون هاتف وكررها يومياً في نفس الموعد.", icon: "fa-repeat" }
+          ]
+        },
+        en: {
+          label: "TikTok During Study/Work",
+          cueTitle: "Hard Study Task or Notification",
+          cueDesc: "Hitting a difficult concept that demands heavy Prefrontal Cortex energy.",
+          dopamineTitle: "Craving Quick Escape",
+          dopamineDesc: "The brain seeks energy relief and spikes dopamine at the sight of your phone.",
+          behaviorTitle: "Checking Apps Every 10 Minutes",
+          behaviorDesc: "Automatic task-switching that shatters deep focus and wastes hours.",
+          rewardTitle: "Temporary Relief from Effort",
+          rewardDesc: "Brief escape from cognitive load, followed by mounting exam/work stress.",
+          strategies: [
+            { title: "1. Remove the Cue", desc: "Put your phone in another room or inside a closed backpack during study blocks.", icon: "fa-eye-slash" },
+            { title: "2. Make Bad Habit Hard", desc: "Delete distracting apps or use strict website blockers during study hours.", icon: "fa-lock" },
+            { title: "3. Make Good Habit Easy", desc: "Keep your desk clear with only the exact textbook page open before sitting down.", icon: "fa-book-open" },
+            { title: "4. Neural Repetition", desc: "Complete daily 25-minute phone-free sprints to wire deep focus into a routine.", icon: "fa-repeat" }
+          ]
+        }
+      },
+      sugar: {
+        icon: "fa-cookie-bite",
+        ar: {
+          label: "أكل الحلويات والوجبات السريعة ليلاً",
+          cueTitle: "التوتر المسائي أو رؤية الحلويات بالمطبخ",
+          cueDesc: "الشعور بالإجهاد بعد يوم طويل ورؤية الأطعمة السكرية على الطاولة.",
+          dopamineTitle: "اندفاع الدوبامين لتوقع السكر",
+          dopamineDesc: "يرتبط السكر بمسارات مكافأة بدائية قوية جداً في العقد القاعدية.",
+          behaviorTitle: "تناول كميات كبيرة بلا وعي",
+          behaviorDesc: "الأكل التلقائي أمام الشاشات دون شعور بالجوع الحقيقي.",
+          rewardTitle: "هدوء لحظي ومذاق سكري",
+          rewardDesc: "شعور سريع بالراحة يعقبه خمول وتراجع في الصحة واللياقة.",
+          strategies: [
+            { title: "1. إزالة الإشارة", desc: "لا تضع الحلويات أو المقرمشات في مكان مرئي أبداً على طاولة المطبخ.", icon: "fa-eye-slash" },
+            { title: "2. تصعيب العادة السيئة", desc: "لا تشترِ الوجبات السكرية للمنزل، واحذف تطبيقات توصيل الطعام السريع.", icon: "fa-lock" },
+            { title: "3. تسهيل العادة الجيدة", desc: "ضع طبق فواكه مغسولة ومقطعة أو مكسرات صحية وزجاجة ماء أمام عينيك.", icon: "fa-apple-whole" },
+            { title: "4. بناء المسار بالتكرار", desc: "استبدل سناك السهرة بكوب مشروب دافئ أو فاكهة يومياً في نفس التوقيت.", icon: "fa-repeat" }
+          ]
+        },
+        en: {
+          label: "Late-Night Sugar & Snacking",
+          cueTitle: "Evening Stress + Visible Snacks",
+          cueDesc: "Feeling drained after work and spotting sugary snacks on the kitchen counter.",
+          dopamineTitle: "High Dopamine Sugar Craving",
+          dopamineDesc: "Refined sugar hijacks ancient reward circuits in the Basal Ganglia.",
+          behaviorTitle: "Mindless Snacking in Front of TV",
+          behaviorDesc: "Eating automatically without physical hunger while distracted.",
+          rewardTitle: "Instant Comfort & Sugar Rush",
+          rewardDesc: "Brief taste pleasure followed by energy crash and health setbacks.",
+          strategies: [
+            { title: "1. Remove the Cue", desc: "Never leave junk food or sweets visible on counters or desks.", icon: "fa-eye-slash" },
+            { title: "2. Make Bad Habit Hard", desc: "Keep junk food out of the house and uninstall fast-food delivery apps.", icon: "fa-lock" },
+            { title: "3. Make Good Habit Easy", desc: "Keep washed fruit, nuts, and cold water front-and-center at eye level.", icon: "fa-apple-whole" },
+            { title: "4. Neural Repetition", desc: "Pair evening relaxation with herbal tea or fruit consistently for 3 weeks.", icon: "fa-repeat" }
+          ]
+        }
+      },
+      custom: {
+        icon: "fa-Sliders",
+        ar: {
+          label: "خصص عادتك الخاصة ✍️"
+        },
+        en: {
+          label: "Custom Habit Builder ✍️"
+        }
+      }
+    };
+
+    // Default Workshop Habits (Tool 3)
+    const defaultWorkshopHabits = [
+      {
+        id: "ws-1",
+        ar: {
+          badHabit: "تصفح الهاتف حتى 4 فجراً",
+          friction: "شحن الهاتف في الصالة خارج غرفة النوم",
+          easyGood: "وضع كتاب على الوسادة وقراءة 3 صفحات"
+        },
+        en: {
+          badHabit: "Phone Scrolling Until 4 AM",
+          friction: "Charge phone in the living room outside bedroom",
+          easyGood: "Place a book on the pillow & read 3 pages"
+        },
+        reps: 5,
+        targetReps: 14
+      },
+      {
+        id: "ws-2",
+        ar: {
+          badHabit: "الكسل عن الرياضة والمشي اليومي",
+          friction: "إلغاء الجلوس على الأريكة فور العودة للمنزل",
+          easyGood: "وضع حذاء الجري والملابس الرياضية أمام الباب مباشرة"
+        },
+        en: {
+          badHabit: "Skipping Daily Walk / Exercise",
+          friction: "Avoid sitting on the couch right after returning home",
+          easyGood: "Place running shoes & workout clothes right by the door"
+        },
+        reps: 8,
+        targetReps: 14
+      }
+    ];
+
+    // Quiz Questions Data (Tool 4)
+    const quizData = [
+      {
+        ar: {
+          q: "1. لماذا يحوّل الدماغ البشري السلوكيات المتكررة إلى عادات تلقائية؟",
+          options: [
+            "لأن الدماغ يستهلك حوالي 20% من طاقة الجسم ويسعى لتوفير الطاقة عبر الاختصارات العصبية",
+            "لأن الإنسان بطبيعته ضعيف الإرادة ويحب العادات السيئة",
+            "لأن القشرة الجبهية الأمامية لا تعمل أثناء النهار",
+            "لأن الدماغ يمسح الذكريات القديمة كل أسبوع"
+          ],
+          correct: 0,
+          explanation: "صحيح! يستهلك الدماغ نحو 20% من طاقة الجسم، لذا يحول أي سلوك متكرر إلى عادة تلقائية لتوفير الطاقة."
+        },
+        en: {
+          q: "1. Why does the human brain turn repeated behaviors into automatic habits?",
+          options: [
+            "Because the brain consumes ~20% of body energy and creates neural shortcuts to save energy",
+            "Because humans naturally have weak willpower",
+            "Because the Prefrontal Cortex is inactive during the day",
+            "Because the brain deletes old memories every week"
+          ],
+          correct: 0,
+          explanation: "Correct! The brain consumes about 20% of the body's energy, so it automates repeated actions to conserve metabolic energy."
+        }
+      },
+      {
+        ar: {
+          q: "2. أين يتم تخزين العادات التلقائية العميقة بعد تكرارها؟",
+          options: [
+            "في الفص القذالي البصري",
+            "في العقد القاعدية (Basal Ganglia) العميقة داخل الدماغ",
+            "في القشرة الجبهية الأمامية فقط",
+            "في الحبل الشوكي"
+          ],
+          correct: 1,
+          explanation: "أحسنت! تبدأ السلوكيات في القشرة الجبهية الواعية، ومع التكرار تنتقل إلى (العقد القاعدية) لتعمل تلقائياً وبسرعة فائقة."
+        },
+        en: {
+          q: "2. Where are deeply ingrained automatic habits stored in the brain?",
+          options: [
+            "In the visual occipital lobe",
+            "In the deep Basal Ganglia",
+            "Exclusively in the Prefrontal Cortex",
+            "In the spinal cord"
+          ],
+          correct: 1,
+          explanation: "Spot on! Behaviors start in the conscious Prefrontal Cortex, and through repetition shift into the Basal Ganglia."
+        }
+      },
+      {
+        ar: {
+          q: "3. ما هو الدور الحقيقي لهرمون الدوبامين في حلقة العادة كما أوضح راسل بولدراك؟",
+          options: [
+            "يُفرز فقط بعد الانتهاء من العادة ليشعرك بالنعاس",
+            "هو هرمون التوقع والدافع؛ يرتفع بمجرد رؤية 'الإشارة' ليخلق رغبة ملحة لتنفيذ السلوك",
+            "يقوم بمسح المسارات العصبية القديمة فوراً",
+            "ليس له أي علاقة بالعادات"
+          ],
+          correct: 1,
+          explanation: "دقيق جداً! الدوبامين هو هرمون التوقع (Anticipation) وليس مجرد السعادة؛ رؤيتك للإشارة تطلق الدوبامين فتدفعك بقوة نحو السلوك."
+        },
+        en: {
+          q: "3. What is Dopamine's true role in the Habit Loop according to Russell Poldrack?",
+          options: [
+            "It only releases after sleep",
+            "It is the hormone of anticipation & craving; it spikes right when you see the Cue",
+            "It erases old neural pathways immediately",
+            "It has no connection to habits"
+          ],
+          correct: 1,
+          explanation: "Exactly! Dopamine drives anticipation and craving—spiking the moment you encounter a habit's Cue."
+        }
+      },
+      {
+        ar: {
+          q: "4. لماذا تحدث الانتكاسة والعودة للعادة القديمة أثناء فترات التوتر والضغط النفسي؟",
+          options: [
+            "لأن المسارات العصبية القديمة لا تُمحى أبداً، والتوتر يضعف النظام الواعي فيعود الدماغ للمسار القديم",
+            "لأن العادات الجديدة تستحيل صناعتها",
+            "لأن العقد القاعدية تتوقف عن العمل أثناء التوتر",
+            "لأن الدوبامين يختفي من الجسم نهائياً"
+          ],
+          correct: 0,
+          explanation: "ممتاز! الدماغ لا يمسح المسارات القديمة بل يبني مساراً جديداً بجانبها؛ وعند الإرهاق أو الضغط تضعف القشرة الجبهية فتسيطر العادة القديمة."
+        },
+        en: {
+          q: "4. Why does relapse into an old habit often happen during high stress or exhaustion?",
+          options: [
+            "Old neural pathways are never erased; stress weakens the conscious system so the brain defaults to the old pathway",
+            "New habits are biologically impossible to form",
+            "The Basal Ganglia shuts down under stress",
+            "Dopamine permanently disappears"
+          ],
+          correct: 0,
+          explanation: "Correct! Old pathways remain dormant; when stress or fatigue drains the Prefrontal Cortex, the brain defaults to the older pathway."
+        }
+      },
+      {
+        ar: {
+          q: "5. ما هي الطريقة الأكثر فعالية للتخلص من عادة سيئة وفقاً لعلم الأعصاب؟",
+          options: [
+            "الاعتماد فقط على قوة الإرادة وتأنيب الضمير عند السهر",
+            "هندسة السلوك والبيئة: إزالة الإشارات، تصعيب العادة السيئة، تسهيل العادة الجيدة، والتكرار",
+            "انتظار تحفيز مفاجئ بدون تغيير البيئة المحيطة",
+            "إبقاء الهاتف والمغريات أمام عينيك لاختبار صبرك"
+          ],
+          correct: 1,
+          explanation: "رائع! هندسة البيئة والسلوك تغير قواعد اللعبة لصالحك دون استنزاف طاقة الإرادة المحدودة."
+        },
+        en: {
+          q: "5. What is the most effective neuroscience-backed way to break a bad habit?",
+          options: [
+            "Relying purely on late-night willpower and self-blame",
+            "Behavior & Environment Engineering: remove cues, add friction to bad habits, make good habits easy, and repeat",
+            "Waiting for random motivation without changing your surroundings",
+            "Keeping temptations right in front of you to test your willpower"
+          ],
+          correct: 1,
+          explanation: "Bravo! Environment Engineering removes the trigger before dopamine spikes, tilting the biological battle in your favor."
+        }
+      }
+    ];
+
+    // ==================== INITIALIZATION & STORAGE ====================
+    function initApp() {
+      // Load saved workshop habits from localStorage or fallback to defaults
+      try {
+        const saved = localStorage.getItem('neuro_habit_workshop_v1');
+        if (saved) {
+          workshopHabits = JSON.parse(saved);
+        } else {
+          workshopHabits = JSON.parse(JSON.stringify(defaultWorkshopHabits));
+        }
+      } catch (e) {
+        workshopHabits = JSON.parse(JSON.stringify(defaultWorkshopHabits));
+      }
+
+      renderAll();
+    }
+
+    function saveWorkshopToStorage() {
+      try {
+        localStorage.setItem('neuro_habit_workshop_v1', JSON.stringify(workshopHabits));
+      } catch (e) {
+        // Fallback silently if storage restricted
+      }
+    }
+
+    // ==================== THEME & LANGUAGE SWITCHERS ====================
+    function toggleTheme() {
+      const htmlEl = document.documentElement;
+      const themeIcon = document.getElementById('themeIcon');
+      if (htmlEl.classList.contains('dark')) {
+        htmlEl.classList.remove('dark');
+        themeIcon.className = 'fa-solid fa-moon text-base text-slate-700';
+      } else {
+        htmlEl.classList.add('dark');
+        themeIcon.className = 'fa-solid fa-sun text-base text-amber-400';
+      }
+    }
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      const htmlEl = document.documentElement;
+      htmlEl.lang = currentLang;
+      htmlEl.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      renderAll();
+    }
+
+    // ==================== RENDER ALL SECTIONS ====================
+    function renderAll() {
+      const t = i18n[currentLang];
+
+      // Update static text nodes by ID
+      const staticIds = [
+        'navBrandTitle', 'navBrandSubtitle', 'navLinkChapters', 'navLinkLoop',
+        'navLinkBattle', 'navLinkWorkshop', 'navLinkQuiz', 'langToggleText',
+        'heroBadge', 'heroTitle', 'hero2AmTitle', 'hero2AmDesc', 'heroSubtext',
+        'heroBtnStart', 'heroBtnVideo', 'bookCardTitle', 'bookCardAuthor',
+        'clockLabel1', 'clockSub1', 'clockLoopLabel', 'clockLabel2', 'clockSub2',
+        'stat1Desc', 'stat2Desc', 'stat3Desc', 'stat4Desc',
+        'sec1Badge', 'sec1Title', 'sec1Subtitle',
+        'sec2Badge', 'sec2Title', 'sec2Subtitle', 'customFormHeader',
+        'lblCustomCue', 'lblCustomBehavior', 'lblCustomGood',
+        'loopStep1Tag', 'loopStep2Tag', 'loopStep3Tag', 'loopStep4Tag', 'reEngHeader',
+        'sec3Badge', 'sec3Title', 'sec3Subtitle',
+        'scenBtn2AM', 'scenBtnStress', 'scenBtnEngineered',
+        'lblSliderStress', 'hintSliderStress', 'lblSliderFatigue', 'hintSliderFatigue',
+        'lblSliderCues', 'hintSliderCues', 'lblSliderRepetition', 'hintSliderRepetition',
+        'pfcTitle', 'pfcRoleDesc', 'bgTitle', 'bgRoleDesc', 'barLabelConscious', 'barLabelAuto',
+        'sec4Badge', 'sec4Title', 'sec4Subtitle', 'btnResetWorkshop',
+        'workshopFormTitle', 'lblWsBad', 'lblWsCueRemove', 'lblWsGoodEasy', 'btnAddWsHabit',
+        'sec5Badge', 'sec5Title', 'sec5Subtitle', 'quizScoreLabel', 'resetQuizText',
+        'footerSourceText', 'footerWatchLink', 'footerCreditPrimary', 'footerCreditSecondary'
+      ];
+
+      staticIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && t[id] !== undefined) {
+          el.innerHTML = t[id];
+        }
+      });
+
+      // Mobile nav labels
+      document.getElementById('mobNavChapters').textContent = t.navLinkChapters;
+      document.getElementById('mobNavLoop').textContent = t.navLinkLoop;
+      document.getElementById('mobNavBattle').textContent = t.navLinkBattle;
+      document.getElementById('mobNavWorkshop').textContent = t.navLinkWorkshop;
+      document.getElementById('mobNavQuiz').textContent = t.navLinkQuiz;
+
+      // Update input placeholders based on language
+      if (currentLang === 'ar') {
+        document.getElementById('inpCustomCue').placeholder = "مثال: الشعور بالملل أو رؤية الهاتف";
+        document.getElementById('inpCustomBehavior').placeholder = "مثال: تصفح الريلز لساعات";
+        document.getElementById('inpCustomGood').placeholder = "مثال: قراءة 5 صفحات من كتاب";
+        document.getElementById('wsInpBad').placeholder = "مثال: السهر على الهاتف";
+        document.getElementById('wsInpFriction').placeholder = "مثال: شحن الهاتف خارج غرفة النوم";
+        document.getElementById('wsInpEasyGood').placeholder = "مثال: وضع كتاب على الوسادة";
+      } else {
+        document.getElementById('inpCustomCue').placeholder = "e.g., Feeling bored or seeing my phone";
+        document.getElementById('inpCustomBehavior').placeholder = "e.g., Scrolling reels for hours";
+        document.getElementById('inpCustomGood').placeholder = "e.g., Reading 5 pages of a book";
+        document.getElementById('wsInpBad').placeholder = "e.g., Late-night phone scrolling";
+        document.getElementById('wsInpFriction').placeholder = "e.g., Charge phone outside bedroom";
+        document.getElementById('wsInpEasyGood').placeholder = "e.g., Put a book on my pillow";
+      }
+
+      // Render Interactive Modules
+      renderTimeline();
+      renderHabitLoopTool();
+      updateBrainSimulator();
+      renderWorkshop();
+      renderQuiz();
+    }
+
+    // ==================== 1. RENDER TIMELINE & CHAPTER SPOTLIGHT ====================
+    function renderTimeline() {
+      const listContainer = document.getElementById('timelineButtonsContainer');
+      listContainer.innerHTML = chaptersData.map((chap, idx) => {
+        const c = chap[currentLang];
+        const isActive = idx === currentChapterIndex;
+        return `
+          <button onclick="selectChapter(${idx})" class="w-full text-start p-3.5 rounded-2xl border transition-all flex items-center gap-3.5 ${
+            isActive
+              ? 'bg-indigo-600 text-white border-indigo-500 shadow-lg shadow-indigo-500/25'
+              : 'bg-white dark:bg-slate-900/80 text-slate-800 dark:text-slate-200 border-slate-200 dark:border-slate-800 hover:border-indigo-400'
+          }">
+            <span class="px-2.5 py-1 rounded-lg font-mono text-xs font-bold shrink-0 ${
+              isActive ? 'bg-white/20 text-white' : 'bg-indigo-50 dark:bg-indigo-950/90 text-indigo-600 dark:text-indigo-400'
+            }">
+              ${chap.time}
+            </span>
+            <span class="font-bold text-xs sm:text-sm line-clamp-1 flex-1">${c.title}</span>
+            <i class="fa-solid ${currentLang === 'ar' ? 'fa-chevron-left' : 'fa-chevron-right'} text-xs opacity-75"></i>
+          </button>
+        `;
+      }).join('');
+
+      renderChapterDetail();
+    }
+
+    function selectChapter(idx) {
+      currentChapterIndex = idx;
+      renderTimeline();
+    }
+
+    function renderChapterDetail() {
+      const chap = chaptersData[currentChapterIndex];
+      const c = chap[currentLang];
+      const container = document.getElementById('chapterDetailContainer');
+
+      const labels = currentLang === 'ar'
+        ? {
+            chapterNum: `الفصل ${currentChapterIndex + 1} من ${chaptersData.length}`,
+            watchAt: `شاهد هذه النقطة في الفيديو (${chap.time})`,
+            neuroHeader: "التفسير العصبي (من كتاب راسل بولدراك):",
+            actionHeader: "القاعدة العملية للتطبيق الفوري:",
+            prev: "الفصل السابق",
+            next: "الفصل التالي"
+          }
+        : {
+            chapterNum: `Chapter ${currentChapterIndex + 1} of ${chaptersData.length}`,
+            watchAt: `Watch this exact moment on YouTube (${chap.time})`,
+            neuroHeader: "Neuroscience Breakdown (Russell Poldrack):",
+            actionHeader: "Practical Action Rule:",
+            prev: "Previous Chapter",
+            next: "Next Chapter"
+          };
+
+      container.innerHTML = `
+        <div class="space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4">
+            <div class="flex items-center gap-2.5">
+              <span class="px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 font-extrabold text-xs">
+                ${labels.chapterNum}
+              </span>
+              <span class="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                <i class="fa-regular fa-clock mr-1 ml-1"></i>${chap.time}
+              </span>
+            </div>
+
+            <a href="https://youtu.be/HFfz_W0HCm4?t=${chap.seconds}" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-2 rounded-xl bg-rose-50 dark:bg-rose-950/70 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-rose-800 hover:bg-rose-100 transition">
+              <i class="fa-brands fa-youtube text-sm"></i>
+              <span>${labels.watchAt}</span>
+            </a>
+          </div>
+
+          <div class="space-y-2">
+            <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-snug">
+              ${c.title}
+            </h3>
+            <p class="text-sm sm:text-base font-semibold text-indigo-600 dark:text-indigo-400">
+              ${c.summary}
+            </p>
+          </div>
+
+          <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/70 space-y-2">
+            <h4 class="text-xs sm:text-sm font-extrabold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+              <i class="fa-solid fa-microscope text-indigo-500"></i>
+              <span>${labels.neuroHeader}</span>
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              ${c.science}
+            </p>
+          </div>
+
+          <div class="p-4 sm:p-5 rounded-2xl bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/70 space-y-2">
+            <h4 class="text-xs sm:text-sm font-extrabold text-emerald-900 dark:text-emerald-300 flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-500"></i>
+              <span>${labels.actionHeader}</span>
+            </h4>
+            <p class="text-xs sm:text-sm text-emerald-800 dark:text-emerald-200 leading-relaxed font-medium">
+              ${c.action}
+            </p>
+          </div>
+
+          <div class="flex items-center justify-between pt-2">
+            <button onclick="selectChapter(${Math.max(0, currentChapterIndex - 1)})" ${currentChapterIndex === 0 ? 'disabled' : ''}
+                    class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-200 dark:border-slate-700 disabled:opacity-40 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+              ${labels.prev}
+            </button>
+            <button onclick="selectChapter(${Math.min(chaptersData.length - 1, currentChapterIndex + 1)})" ${currentChapterIndex === chaptersData.length - 1 ? 'disabled' : ''}
+                    class="px-4 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white disabled:opacity-40 hover:bg-indigo-500 transition">
+              ${labels.next}
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    // ==================== 2. HABIT LOOP DECONSTRUCTOR LOGIC ====================
+    function renderHabitLoopTool() {
+      const bar = document.getElementById('presetHabitsBar');
+      const keys = ['scrolling', 'study', 'sugar', 'custom'];
+
+      bar.innerHTML = keys.map(k => {
+        const item = presetHabitsData[k];
+        const active = k === currentPresetKey;
+        return `
+          <button onclick="selectPresetHabit('${k}')" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold border transition flex items-center gap-2 ${
+            active
+              ? 'bg-violet-600 text-white border-violet-500 shadow-md shadow-violet-500/20'
+              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-violet-400'
+          }">
+            <i class="fa-solid ${item.icon}"></i>
+            <span>${item[currentLang].label}</span>
+          </button>
+        `;
+      }).join('');
+
+      const customForm = document.getElementById('customHabitForm');
+      if (currentPresetKey === 'custom') {
+        customForm.classList.remove('hidden');
+        updateCustomHabitLoop();
+      } else {
+        customForm.classList.add('hidden');
+        populateLoopBoxes(presetHabitsData[currentPresetKey][currentLang]);
+      }
+    }
+
+    function selectPresetHabit(key) {
+      currentPresetKey = key;
+      renderHabitLoopTool();
+    }
+
+    function populateLoopBoxes(data) {
+      document.getElementById('loopCueTitle').textContent = data.cueTitle;
+      document.getElementById('loopCueDesc').textContent = data.cueDesc;
+      document.getElementById('loopDopamineTitle').textContent = data.dopamineTitle;
+      document.getElementById('loopDopamineDesc').textContent = data.dopamineDesc;
+      document.getElementById('loopBehaviorTitle').textContent = data.behaviorTitle;
+      document.getElementById('loopBehaviorDesc').textContent = data.behaviorDesc;
+      document.getElementById('loopRewardTitle').textContent = data.rewardTitle;
+      document.getElementById('loopRewardDesc').textContent = data.rewardDesc;
+
+      const grid = document.getElementById('fourStrategiesGrid');
+      grid.innerHTML = data.strategies.map((st, i) => `
+        <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/80 space-y-2 hover:border-emerald-500/60 transition">
+          <div class="flex items-center justify-between">
+            <span class="w-8 h-8 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-black text-sm">
+              <i class="fa-solid ${st.icon}"></i>
+            </span>
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+              ${currentLang === 'ar' ? `الاستراتيجية ${i + 1}` : `Strategy ${i + 1}`}
+            </span>
+          </div>
+          <h4 class="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white">${st.title}</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${st.desc}</p>
+        </div>
+      `).join('');
+    }
+
+    function updateCustomHabitLoop() {
+      const cueVal = document.getElementById('inpCustomCue').value.trim();
+      const behVal = document.getElementById('inpCustomBehavior').value.trim();
+      const goodVal = document.getElementById('inpCustomGood').value.trim();
+
+      if (currentLang === 'ar') {
+        const cue = cueVal || "رؤية المحفز أو الشعور بالملل/التوتر";
+        const beh = behVal || "تنفيذ العادة السيئة تلقائياً";
+        const good = goodVal || "تنفيذ العادة الإيجابية البديلة";
+
+        populateLoopBoxes({
+          cueTitle: cue,
+          cueDesc: "الإشارة التي تلتقطها حواسك وتبدأ بتشغيل المسار العصبي في العقد القاعدية.",
+          dopamineTitle: "إفراز الدوبامين وتوقع المكافأة",
+          dopamineDesc: `بمجرد حدوث (${cue}) يرتفع الدوبامين ليخلق رغبة ملحة في (${beh}).`,
+          behaviorTitle: beh,
+          behaviorDesc: "السلوك الروتيني السريع الذي ينفذه الدماغ لتوفير الطاقة والهروب من الإلحاح.",
+          rewardTitle: "راحة لحظية مؤقتة",
+          rewardDesc: "تهدئة الرغبة الملحة مؤقتاً، مما يعزز ارتباط الإشارة بالسلوك للمرة القادمة.",
+          strategies: [
+            { title: "1. إزالة الإشارة", desc: `أبعد أو أخفِ كل ما يذكرك بـ (${cue}) عن مجال رؤيتك المباشر.`, icon: "fa-eye-slash" },
+            { title: "2. اجعل العادة السيئة صعبة", desc: `أضف 3 خطوات عوائق على الأقل تمنعك من القيام بـ (${beh}) بسهولة.`, icon: "fa-lock" },
+            { title: "3. اجعل العادة الجيدة سهلة", desc: `جهّز أدوات (${good}) أمامك مسبقاً بحيث تبدأ فيها خلال أقل من 10 ثوانٍ.`, icon: "fa-wand-magic-sparkles" },
+            { title: "4. التكرار لبناء المسار", desc: `كرر (${good}) يومياً عند نفس التوقيت لتكوين مسار عصبي أقوى من المسار القديم.`, icon: "fa-repeat" }
+          ]
+        });
+      } else {
+        const cue = cueVal || "Seeing the trigger or feeling bored/stressed";
+        const beh = behVal || "Performing the automatic bad habit";
+        const good = goodVal || "Performing the healthy replacement habit";
+
+        populateLoopBoxes({
+          cueTitle: cue,
+          cueDesc: "The trigger detected by your senses that activates the Basal Ganglia routine.",
+          dopamineTitle: "Dopamine Spike & Craving",
+          dopamineDesc: `As soon as (${cue}) occurs, dopamine spikes to create an urgent craving for (${beh}).`,
+          behaviorTitle: beh,
+          behaviorDesc: "The effortless autopilot routine executed to satisfy the dopamine craving.",
+          rewardTitle: "Short-Term Relief",
+          rewardDesc: "Temporary relief that reinforces the neural link for next time.",
+          strategies: [
+            { title: "1. Remove the Cue", desc: `Eliminate or hide (${cue}) from your immediate physical or digital sight.`, icon: "fa-eye-slash" },
+            { title: "2. Make Bad Habit Hard", desc: `Add at least 3 friction steps so doing (${beh}) becomes inconvenient.`, icon: "fa-lock" },
+            { title: "3. Make Good Habit Easy", desc: `Prep everything needed for (${good}) in advance so it takes under 10 seconds to start.`, icon: "fa-wand-magic-sparkles" },
+            { title: "4. Neural Repetition", desc: `Repeat (${good}) daily to build a competing neural pathway stronger than the old one.`, icon: "fa-repeat" }
+          ]
+        });
+      }
+    }
+
+    // ==================== 3. BRAIN BATTLE SIMULATOR LOGIC ====================
+    function applyBrainScenario(stress, fatigue, cues, repetition) {
+      document.getElementById('sliderStress').value = stress;
+      document.getElementById('sliderFatigue').value = fatigue;
+      document.getElementById('sliderCues').value = cues;
+      document.getElementById('sliderRepetition').value = repetition;
+      updateBrainSimulator();
+    }
+
+    function updateBrainSimulator() {
+      const stress = parseInt(document.getElementById('sliderStress').value, 10);
+      const fatigue = parseInt(document.getElementById('sliderFatigue').value, 10);
+      const cues = parseInt(document.getElementById('sliderCues').value, 10);
+      const repetition = parseInt(document.getElementById('sliderRepetition').value, 10);
+
+      document.getElementById('valStress').textContent = stress + '%';
+      document.getElementById('valFatigue').textContent = fatigue + '%';
+      document.getElementById('valCues').textContent = cues + '%';
+      document.getElementById('valRepetition').textContent = repetition + '%';
+
+      // Calculate Automatic System Pull vs Conscious + Engineered System Power
+      // High stress, fatigue, and cue proximity empower Basal Ganglia (old habit).
+      // Low cues (environment engineering) + high repetition empower Prefrontal Cortex & new pathway.
+      const autoPull = (stress * 0.28) + (fatigue * 0.28) + (cues * 0.44);
+      const consciousPush = ((100 - stress) * 0.20) + ((100 - fatigue) * 0.20) + ((100 - cues) * 0.30) + (repetition * 0.45);
+
+      const total = Math.max(1, autoPull + consciousPush);
+      const consciousPct = Math.min(95, Math.max(5, Math.round((consciousPush / total) * 100)));
+      const autoPct = 100 - consciousPct;
+
+      // Update numbers & progress bar
+      document.getElementById('pfcPowerText').textContent = consciousPct + '%';
+      document.getElementById('bgPowerText').textContent = autoPct + '%';
+      document.getElementById('battleBarConscious').style.width = consciousPct + '%';
+
+      // Dynamic visual glow on SVG regions
+      const pfcGroup = document.getElementById('svgPfcGroup');
+      const bgGroup = document.getElementById('svgBgGroup');
+      if (consciousPct >= 50) {
+        pfcGroup.style.transform = 'scale(1.04)';
+        pfcGroup.style.opacity = '1';
+        bgGroup.style.transform = 'scale(0.95)';
+        bgGroup.style.opacity = '0.65';
+      } else {
+        bgGroup.style.transform = 'scale(1.06)';
+        bgGroup.style.opacity = '1';
+        pfcGroup.style.transform = 'scale(0.95)';
+        pfcGroup.style.opacity = '0.6';
+      }
+
+      // Update diagnosis box
+      const diagBox = document.getElementById('battleDiagnosisBox');
+      const diagIcon = document.getElementById('battleDiagIcon');
+      const diagTitle = document.getElementById('battleDiagTitle');
+      const diagText = document.getElementById('battleDiagText');
+
+      if (consciousPct >= 55) {
+        diagBox.className = "p-5 rounded-2xl border-2 bg-emerald-50/90 dark:bg-emerald-950/30 border-emerald-400 dark:border-emerald-700 transition-all";
+        diagIcon.className = "w-11 h-11 rounded-2xl flex items-center justify-center shrink-0 text-xl bg-emerald-500 text-white";
+        diagIcon.innerHTML = '<i class="fa-solid fa-trophy"></i>';
+
+        if (currentLang === 'ar') {
+          diagTitle.textContent = `النظام الواعي والمسار الجديد ينتصران (${consciousPct}%)!`;
+          diagText.textContent = "بفضل تقليل الإشارات في بيئتك وتكرار العادة البديلة، لا تضطر القشرة الجبهية لاستنزاف طاقتها في مقاومة الدوبامين. أنت الآن تطبق 'هندسة السلوك' بنجاح!";
+        } else {
+          diagTitle.textContent = `Conscious System & New Pathway Win (${consciousPct}%)!`;
+          diagText.textContent = "By reducing environmental cues and repeating your new habit, your Prefrontal Cortex doesn't have to burn energy fighting dopamine spikes. Behavior Engineering is working!";
+        }
+      } else if (consciousPct >= 42) {
+        diagBox.className = "p-5 rounded-2xl border-2 bg-amber-50/90 dark:bg-amber-950/30 border-amber-400 dark:border-amber-700 transition-all";
+        diagIcon.className = "w-11 h-11 rounded-2xl flex items-center justify-center shrink-0 text-xl bg-amber-500 text-white";
+        diagIcon.innerHTML = '<i class="fa-solid fa-scale-unbalanced"></i>';
+
+        if (currentLang === 'ar') {
+          diagTitle.textContent = "صراع حرج على الحافة! (خطر الانتكاسة عند أول ضغط)";
+          diagText.textContent = "أنت تعتمد حالياً على قوة الإرادة بشكل كبير. نصيحة راسل بولدراك: اخفض مؤشر 'قرب الإشارات في البيئة' فوراً (مثلاً أبعد الهاتف عنك) لترجيح الكفة لصالحك دون مجهود.";
+        } else {
+          diagTitle.textContent = "Critical Tug-of-War! (High Relapse Risk Under Stress)";
+          diagText.textContent = "You are relying heavily on raw willpower right now. Russell Poldrack's tip: Lower 'Environmental Cue Proximity' immediately (e.g., move your phone away) to tilt the balance effortlessly.";
+        }
+      } else {
+        diagBox.className = "p-5 rounded-2xl border-2 bg-rose-50/90 dark:bg-rose-950/30 border-rose-400 dark:border-rose-700 transition-all";
+        diagIcon.className = "w-11 h-11 rounded-2xl flex items-center justify-center shrink-0 text-xl bg-rose-600 text-white";
+        diagIcon.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+
+        if (currentLang === 'ar') {
+          diagTitle.textContent = `سيطرة العقد القاعدية التلقائية (${autoPct}%) - فخ العادة القديمة!`;
+          diagText.textContent = "عندما يجتمع الإرهاق أو التوتر مع وجود الإشارة أمامك، تتعطل القشرة الجبهية ويقودك الدوبامين تلقائياً للمسار العصبي القديم (مثل فخ الساعة 2 صباحاً). الحل ليس لوم نفسك بل تغيير البيئة وإزالة الإشارة!";
+        } else {
+          diagTitle.textContent = `Basal Ganglia Takeover (${autoPct}%) - Automatic Habit Trap!`;
+          diagText.textContent = "When fatigue or stress meets a nearby cue, the Prefrontal Cortex goes offline and dopamine steers you straight down the old neural highway (like the 2 AM phone trap). Remove the cue from your environment!";
+        }
+      }
+    }
+
+    // ==================== 4. HABIT WORKSHOP & NEURAL PATHWAY TRACKER ====================
+    function renderWorkshop() {
+      const container = document.getElementById('workshopCardsContainer');
+      if (!workshopHabits.length) {
+        container.innerHTML = '';
+        return;
+      }
+
+      container.innerHTML = workshopHabits.map((item, idx) => {
+        const d = item[currentLang] || item.ar;
+        const pct = Math.min(100, Math.round((item.reps / item.targetReps) * 100));
+        const statusText = currentLang === 'ar'
+          ? (pct >= 100 ? "مسار عصبي راسخ في العقد القاعدية! 🌟" : pct >= 50 ? "المسار العصبي الجديد يزداد سماكة وقوة ⚡" : "بداية تكوين المسار العصبي الجديد 🌱")
+          : (pct >= 100 ? "Strong Neural Pathway Established! 🌟" : pct >= 50 ? "New Neural Pathway Strengthening ⚡" : "Building Initial Neural Connections 🌱");
+
+        return `
+          <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 flex flex-col justify-between space-y-5 shadow-sm">
+            <div class="space-y-3">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider text-rose-600 dark:text-rose-400">
+                    ${currentLang === 'ar' ? 'العادة المراد كسرها' : 'Habit to Break'}
+                  </span>
+                  <h4 class="font-black text-base sm:text-lg text-slate-900 dark:text-white">${d.badHabit}</h4>
+                </div>
+                <button onclick="deleteWorkshopHabit('${item.id}')" class="text-slate-400 hover:text-rose-500 p-1.5 rounded-lg transition" title="Delete">
+                  <i class="fa-solid fa-trash-can text-sm"></i>
+                </button>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                <div class="p-3 rounded-xl bg-white dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800">
+                  <span class="block text-[11px] font-bold text-amber-600 dark:text-amber-400 mb-0.5">
+                    <i class="fa-solid fa-shield-halved"></i> ${currentLang === 'ar' ? 'إزالة الإشارة وتصعيبها:' : 'Remove Cue & Friction:'}
+                  </span>
+                  <p class="text-xs font-semibold text-slate-700 dark:text-slate-200">${d.friction}</p>
+                </div>
+                <div class="p-3 rounded-xl bg-white dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800">
+                  <span class="block text-[11px] font-bold text-emerald-600 dark:text-emerald-400 mb-0.5">
+                    <i class="fa-solid fa-seedling"></i> ${currentLang === 'ar' ? 'العادة البديلة المسهّلة:' : 'Easy Replacement:'}
+                  </span>
+                  <p class="text-xs font-semibold text-slate-700 dark:text-slate-200">${d.easyGood}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Neural Pathway Strength Progress -->
+            <div class="space-y-2.5 pt-2 border-t border-slate-200 dark:border-slate-700/70">
+              <div class="flex items-center justify-between text-xs font-bold">
+                <span class="text-indigo-600 dark:text-indigo-400">${statusText}</span>
+                <span class="font-mono text-slate-700 dark:text-slate-300">${item.reps} / ${item.targetReps} ${currentLang === 'ar' ? 'تكرار' : 'reps'} (${pct}%)</span>
+              </div>
+              <div class="w-full h-3 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-indigo-500 via-violet-500 to-emerald-500 rounded-full transition-all duration-300" style="width: ${pct}%"></div>
+              </div>
+
+              <div class="flex items-center justify-between gap-2 pt-1">
+                <button onclick="incrementHabitRep('${item.id}')" class="flex-1 py-2.5 px-4 rounded-xl font-bold text-xs sm:text-sm bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm active:scale-95 transition flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-bolt"></i>
+                  <span>${currentLang === 'ar' ? '+ سجّل تكرار اليوم (تقوية المسار العصبي)' : '+ Log Today\'s Repetition (Strengthen Pathway)'}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function addWorkshopHabit() {
+      const bad = document.getElementById('wsInpBad').value.trim();
+      const friction = document.getElementById('wsInpFriction').value.trim();
+      const easyGood = document.getElementById('wsInpEasyGood').value.trim();
+      const msgEl = document.getElementById('wsValidationMsg');
+
+      if (!bad || !friction || !easyGood) {
+        msgEl.textContent = i18n[currentLang].wsValidationErr;
+        msgEl.classList.remove('hidden');
+        return;
+      }
+      msgEl.classList.add('hidden');
+
+      const newHabit = {
+        id: 'ws-' + Date.now(),
+        ar: { badHabit: bad, friction: friction, easyGood: easyGood },
+        en: { badHabit: bad, friction: friction, easyGood: easyGood },
+        reps: 1,
+        targetReps: 14
+      };
+
+      workshopHabits.unshift(newHabit);
+      saveWorkshopToStorage();
+
+      document.getElementById('wsInpBad').value = '';
+      document.getElementById('wsInpFriction').value = '';
+      document.getElementById('wsInpEasyGood').value = '';
+
+      renderWorkshop();
+    }
+
+    function incrementHabitRep(id) {
+      const item = workshopHabits.find(h => h.id === id);
+      if (item) {
+        item.reps += 1;
+        saveWorkshopToStorage();
+        renderWorkshop();
+      }
+    }
+
+    function deleteWorkshopHabit(id) {
+      workshopHabits = workshopHabits.filter(h => h.id !== id);
+      saveWorkshopToStorage();
+      renderWorkshop();
+    }
+
+    function resetDefaultWorkshopHabits() {
+      workshopHabits = JSON.parse(JSON.stringify(defaultWorkshopHabits));
+      saveWorkshopToStorage();
+      renderWorkshop();
+    }
+
+    // ==================== 5. INTERACTIVE QUIZ LOGIC ====================
+    function renderQuiz() {
+      const container = document.getElementById('quizQuestionsContainer');
+      let score = 0;
+
+      container.innerHTML = quizData.map((item, qIdx) => {
+        const qObj = item[currentLang];
+        const selected = quizAnswers[qIdx];
+        const isAnswered = selected !== undefined;
+        if (isAnswered && selected === qObj.correct) {
+          score++;
+        }
+
+        const optionsHtml = qObj.options.map((optText, oIdx) => {
+          let btnStyle = "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-indigo-400 text-slate-800 dark:text-slate-200";
+          let iconHtml = `<span class="w-6 h-6 rounded-full border border-slate-300 dark:border-slate-600 flex items-center justify-center text-xs font-bold shrink-0">${oIdx + 1}</span>`;
+
+          if (isAnswered) {
+            if (oIdx === qObj.correct) {
+              btnStyle = "bg-emerald-50 dark:bg-emerald-950/60 border-emerald-500 text-emerald-900 dark:text-emerald-200 font-bold";
+              iconHtml = `<span class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-check"></i></span>`;
+            } else if (oIdx === selected && selected !== qObj.correct) {
+              btnStyle = "bg-rose-50 dark:bg-rose-950/60 border-rose-500 text-rose-900 dark:text-rose-200";
+              iconHtml = `<span class="w-6 h-6 rounded-full bg-rose-500 text-white flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-xmark"></i></span>`;
+            } else {
+              btnStyle = "bg-slate-50 dark:bg-slate-900/40 border-slate-200 dark:border-slate-800 opacity-60";
+            }
+          }
+
+          return `
+            <button onclick="answerQuiz(${qIdx}, ${oIdx})" ${isAnswered ? 'disabled' : ''}
+                    class="w-full text-start p-3.5 rounded-xl border-2 transition flex items-center gap-3 text-xs sm:text-sm ${btnStyle}">
+              ${iconHtml}
+              <span>${optText}</span>
+            </button>
+          `;
+        }).join('');
+
+        const feedbackHtml = isAnswered
+          ? `
+            <div class="mt-3 p-3.5 rounded-xl text-xs sm:text-sm font-medium ${
+              selected === qObj.correct
+                ? 'bg-emerald-100/70 dark:bg-emerald-950/50 text-emerald-900 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-800'
+                : 'bg-amber-100/70 dark:bg-amber-950/50 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-800'
+            }">
+              <i class="fa-solid fa-lightbulb mr-1 ml-1"></i> ${qObj.explanation}
+            </div>
+          `
+          : '';
+
+        return `
+          <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 space-y-4">
+            <h3 class="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white">${qObj.q}</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              ${optionsHtml}
+            </div>
+            ${feedbackHtml}
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('quizScoreVal').textContent = `${score} / ${quizData.length}`;
+    }
+
+    function answerQuiz(qIdx, oIdx) {
+      if (quizAnswers[qIdx] !== undefined) return;
+      quizAnswers[qIdx] = oIdx;
+      renderQuiz();
+    }
+
+    function resetQuiz() {
+      quizAnswers = {};
+      renderQuiz();
+    }
+
+    // Start Application on Load
+    window.onload = initApp;
+  </script>
+</body>
+</html>
